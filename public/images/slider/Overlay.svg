@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="920" viewBox="0 0 1920 920">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.173" x2="0.516" y2="1.089" gradientUnits="objectBoundingBox">
+      <stop offset="0"/>
+      <stop offset="0.433" stop-opacity="0.012"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.509" y1="0" x2="0.5" y2="1.063" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Group_10860" data-name="Group 10860" transform="translate(6497 14860)">
+    <rect id="Overlay-Top" width="920" height="1920" transform="translate(-6497 -13940) rotate(-90)" opacity="0.6" fill="url(#linear-gradient)"/>
+    <rect id="Overlay-Top-2" data-name="Overlay-Top" width="1920" height="920" transform="translate(-6497 -14860)" opacity="0.7" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

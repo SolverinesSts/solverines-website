@@ -1,0 +1,663 @@
+/* Container Styles */
+.bleft {
+  display: inline-block; /* Ensures it behaves like a block to allow styling */
+  width: 50px; /* Adjust the length of the line */
+  height: 2px; /* Set the thickness of the line */
+  background-color:rgb(116,40,148); /* Adjust the color as needed */
+  vertical-align: middle; /* Aligns vertically within inline content */
+  margin: 0 auto; /* Center the line horizontally */
+  position: relative; /* Ensures precise positioning if needed */
+  margin-right: 2%;
+  margin-left: 2%;
+  color: rgb(116,40,148);
+}
+
+.slideshowHeader {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imageContainer{
+  width: 20%;
+  height: 100vh;
+} 
+.imageWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-fill-mode: forwards;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* Hide Inactive Images */
+.hidden {
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Image Animations */
+.imageFromTop {
+  opacity: 1;
+  z-index: 1;
+  animation: slideInFromTop 0.4s ease-in-out forwards;
+}
+
+.imageFromBottom {
+  opacity: 1;
+  z-index: 1;
+  animation: slideInFromBottom 0.3s ease-in-out forwards;
+}
+/* For .triangle animation */
+@keyframes moveUpTriangle {
+  0% {
+    transform: translateY(100vh); /* Start from below the viewport */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1;
+  }
+}
+
+/* For .normaltriangle animation */
+@keyframes moveUpNormalTriangle {
+  0% {
+    transform: translateY(100vh); /* Start from below the viewport */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1;
+  }
+}
+
+.triangle {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 25vw solid transparent;
+  border-top: 75vh solid #8d34db93;
+  opacity: 0; /* Initially hidden */
+  animation: none; /* Default to no animation */
+}
+
+.normaltriangle {
+  position: absolute;
+  z-index: 1;
+  bottom: -100px;
+  left: -160px;
+  width: 0;
+  height: 0;
+  border-left: 208px solid transparent;
+  border-right: 220px solid transparent;
+  border-bottom: 320px solid rgba(165, 165, 165, 0.511);
+  opacity: 0; /* Initially hidden */
+  animation: none; /* Default to no animation */
+}
+
+/* When the triVisible class is added, apply animations */
+/* .triangle.trianglevisible {
+  animation: moveUpTriangle 1s ease-in-out forwards;
+}
+
+.normaltriangle.trianglevisible {
+  animation: moveUpNormalTriangle 1s ease-in-out forwards; 
+} */
+.triangle.trianglevisible {
+  animation: moveUpTriangle 1s ease-in-out forwards;
+  animation-fill-mode: forwards;
+}
+
+.normaltriangle.trianglevisible {
+  /* animation: moveUpNormalTriangle 1s ease-in-out forwards;
+  animation-fill-mode: forwards; */
+  animation: moveUpNormalTriangle 1s ease-in-out forwards;
+  animation-delay: 0.5s; 
+  animation-fill-mode: forwards; 
+}
+
+/* Captions */
+.caption {
+  margin-top: 20%;
+  position: absolute;
+  bottom: 15;
+  left: 30%;
+ right: 5%;
+  opacity: 0;
+  transform: translateX(-50%);
+  animation-fill-mode: forwards;
+  color: white;
+  font-size: 1rem;
+}
+
+.caption.visible {
+  animation: fadeInFromLeft 1s ease-in-out forwards;
+  animation-delay: 0.5s; 
+}
+
+
+.caption.fadeOut {
+  animation: fadeOutToLeft 1s ease-in-out forwards;
+}
+@media (max-width: 1000px) {
+  .caption h1{
+    margin-top: 20%; /* Add margin-top of 20% */
+    font-size: calc(1rem + 1vw); /* Adjust font size dynamically */
+  }
+  
+}
+@media (max-width: 1000px) {
+  .navMenu {
+    display: none; /* Hide the menu */
+  }
+}
+/* Keyframe Animations */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
+
+/* ----------------------------- */
+.section1{
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.s1grid{
+  padding: 4%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: rgb(116,40,148);
+  color: white;
+}
+.s1span{
+  font-weight: bolder;
+  padding-bottom: 2%;
+}
+
+.section2{
+  /* border: 1px solid black; */
+  height: 100;
+  width: 100%;
+  position: relative;
+}
+
+/* Container for the row */
+.row {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  position: relative;
+  flex-wrap: wrap; 
+  padding: 5%;
+}
+
+
+.leftside {
+  flex: 1;
+  box-sizing: border-box; 
+  padding: 2%;
+}
+.globe{
+  flex: 1;
+  box-sizing: border-box; 
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1000px) {
+  .leftside, .globe {
+    flex: 0 0 100%;
+    padding: 2%;
+  }
+}
+/* ----------- */
+.globe{
+  display: flex;
+  align-items:center;
+  justify-content:center ;
+  flex-direction: column;
+}
+
+.logo{
+  margin-top: 15px;
+  color: #51609B;
+  font-weight: bold
+}
+@keyframes spin {
+  0%{
+    background-position-x: 0;
+    
+  }
+  100%{
+    background-position-x: 380px;
+  }
+}
+/* ---------- */
+
+.subTitle {
+  font-size: 18px;
+  color: rgb(116,40,148);
+  margin-bottom: 10px;
+}
+
+.secTitle {
+  color: #222;
+}
+
+.secDesc {
+  font-size: 16px;
+  color: #9ca3a5;
+}
+
+
+.gridItem {
+  padding: 16px; /* Equivalent to p: 3 */
+  margin: 16px; /* Equivalent to mx: 3 */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Equivalent to borderRadius: 2 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: transform 0.3s, background-image 0.3s;
+}
+
+.gridItem:hover {
+  transform: scale(1.05);
+  background-image: url('/images/bg/Frame152.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.s3Title {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  /* border: 1px solid black; */
+  min-height: 20%;
+  display: block;
+   /* or block */
+}
+
+.s3desc {
+  /* border: 1px solid black; */
+  min-height: 30%;
+  display: block;
+  color: #9ca3a5;
+  font-size:small;
+}
+
+.button {
+  text-transform: "none";
+  background-color: rgb(116,40,148); 
+  color: white; 
+  transition: background-color 0.3s, color 0.3s;
+  align-items: center;
+  display: flex;
+  width: 140px;
+  height: 50px;
+  /* border: 1px solid black; */
+}
+.gridItem:hover .s3desc{
+color: white;
+}
+.gridItem:hover .button{
+  background-color: white; 
+  color:rgb(116,40,148) ;
+}
+.button:hover{
+  margin-left: 5px;
+   transition: margin 0.3s;
+}
+.s3img{
+  background-image: url('/images/bg/3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  padding: 10%;
+  padding-bottom: 2%;
+}
+.section3{
+  background-color: #f9fcfd;
+}
+.s3bicon {
+  /* border: 1px solid black; */
+  margin-left: 8px; 
+  transition: opacity 0.3s ease; 
+  padding-top: 5%;
+  display: none;
+}
+
+.button:hover .s3bicon {
+  opacity: 1; 
+  display: inline;
+}
+/* .backgroundBox {
+  background-image: url('/images/bg/halfcircle.png');
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 100%;
+} */
+
+/* ----------------- */
+.folioItem:hover image{
+    background-blend-mode: "darken";
+    background-color: "rgba(0, 0, 0, 0.5)";
+}
+
+/*  */
+
+.s4Title{
+  text-align: center;
+  align-items: center;
+}
+.sec4Title{
+  text-align: center;
+  align-items: center;
+  font-size: 40px;
+  margin-top: 2px;
+}
+
+.folioItem {
+  position: relative;
+  overflow: hidden; /* Ensures the effect stays within the grid item */
+}
+
+.folioItem img {
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom and filter effect */
+}
+
+.folioItem:hover img {
+  transform: scale(1.1); /* Slight zoom effect */
+  filter: brightness(50%); /* Darken the image */
+}
+/* .folioItem:hover .folioContent{
+  bottom: 10%;
+} */
+
+.folioContent {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  width: 60%; 
+  /* border: 1px solid black; */
+  /* height: 30%; */
+  overflow: hidden;
+  position: relative;
+  /* padding: 0px;
+  margin-left: 0px; */
+  /* margin-bottom: 20px; */
+  /* border: 1px solid black; */
+
+}
+.fm {
+  position: absolute;
+  opacity: 1;
+}
+.folioItem:hover .folioContent{
+  height: 30%;
+}
+.folioItem:hover .fm {
+  opacity: 1;
+  left: 0;
+}
+.foliotext{
+  /* border: 1px solid black; */
+  margin-top: 0%;
+}
+.folioItem:hover{
+  
+}
+
+
+
+.cat{
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------------- */
+
+.s6box{
+  text-align: "center";
+  padding: 10%;
+  border: 1px solid #ddd;
+  border-radius: 2%;
+  background: #fff;
+  font-weight:bolder;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  /* transition: background-color 0.3s ease; */
+}
+.s6box:hover {
+  background-color: rgb(116,40,148) ;
+  background-image: url('/images/bg/box.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: slideInFromBottom6 1s ease forwards;
+}
+.s6box:hover > *{
+color: white;
+}
+@keyframes slideInFromBottom6 {
+  from {
+    background-position: right bottom; /* Start from bottom (0px) */
+  }
+  to {
+    background-position: center center; /* End at the center */
+  }
+}
+/* ----------- */
+/* styles/Footer.module.css */
+.footer_02 {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+.aboutWidget h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.phone {
+  font-size: 16px;
+}
+
+.fdivider {
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.copyText {
+  font-size: 14px;
+}
+
+.copyMenu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copyMenu ul li {
+  margin-left: 15px;
+}
+
+.copyMenu ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+
+.section6 {
+  background-color: #fbf9fc;
+  padding: 20px;
+}
+
+.largeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.imageSlider {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden; /* Ensure only 4 images are visible */
+  width: 100%;
+  padding: 5%; /* Add padding for proper spacing */
+}
+
+.carouselImage {
+  flex: 1; /* Ensures images take up equal space */
+  max-width: 20%; /* Ensures exactly 5 images fit in a row */
+  margin-right: 10px;
+  border-radius: 10px; /* Adds circular style to images */
+  transition: transform 0.5s ease-in-out; /* Smooth animation */
+}
+
+.carouselImage:last-child {
+  margin-right: 0; /* Remove margin for the last image */
+}
+
+ /* -------------  7*/
+ .s7row {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.s7left {
+  flex: 0 0 30%; 
+  max-width: 30%; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.s7right {
+  flex: 0 0 70%;
+  max-width: 70%; 
+  display: flex;
+  align-items: center; 
+}
+
+.imageSlider {
+  display: flex;
+  /* overflow-x: auto;  */
+}
+
+/* -------------- */
+
+.footrow{
+  margin: 0px;
+  padding: 5%;
+  padding-top: 0;
+  padding-bottom: 0px;
+}
+.aboutWidget h2{
+  font-weight: bolder;
+}
+.phone{
+  padding: 2%;
+  display: flex;
+  font-weight: bolder;
+}
+.fphn{
+  font-size: 40px;
+  color:rgb(145, 78, 176) ;
+  padding-left: 2%;
+}
+
+
+
+.copyrightrow{
+  display: flex;
+  width: 100%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.copyText{
+  padding: 5%;
+  padding-bottom: 0px;
+  font-size: larger;
+  }
+  .copyMenu{
+    padding: 5%;
+    padding-bottom: 0px;
+    margin-left: 20%;
+ 
+  }
+  .copyMenu ul li a:hover{
+    color:rgb(145, 78, 176)  ;
+  }
+  .copyMenu ul li a{
+    color: black;
+  }
+
+  /* ------------ */
+
+  
+/* .s5box:hover{
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.s5box{
+  padding: 1%;
+} */

@@ -1,0 +1,65 @@
+.header03{
+  padding: 0;
+  margin: 0;
+}
+.header03 {
+  position: fixed;
+  width: 100%;
+  /* border-bottom: 0.2px solid rgb(174, 174, 174); */
+  max-width: 100%;
+  padding-bottom: 0.1%;
+  z-index: 10;
+  background-color: transparent;
+  background-color: none;
+  margin-left:0px ;
+  margin: 0px;
+}
+.menuLink{
+  color: white;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  /* padding: 2.2%; */
+  /* border: 1px solid black; */
+}
+/* .menuLink:hover{
+  border-bottom:1px solid white
+} */
+.serach{
+  padding-left: 3%;
+  border-left: 1px solid white;
+  /* border: 1px solid black; */
+  width: 5%;
+}
+
+.header03.scrolled {
+  background-color: #fefbfb; 
+}
+
+/* You can also change other styles (e.g., text color) when scrolled */
+.header03.scrolled .menuLink {
+  color: rgb(7, 6, 6);
+}
+.serach , .contact{
+  color: white;
+}
+.serach.scrolled ,.contact.scrolled{
+  color:rgb(116,40,148) ;
+}
+.navMenu{
+  /* border: 1px solid black; */
+  margin-left: -5%;
+}
+.submenu .MuiPaper-root {
+  width: 20%;
+  border-bottom: 2px solid black;
+}
+
+
+
+
+
+
+
+

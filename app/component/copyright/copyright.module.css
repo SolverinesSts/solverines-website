@@ -1,0 +1,68 @@
+
+  
+  .copyMenu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .copyMenu ul li {
+    margin-left: 15px;
+  }
+  .footrow{
+    margin: 0px;
+    padding: 5%;
+    padding-top: 0;
+    padding-bottom: 0px;
+  }
+  .aboutWidget{
+    padding-bottom: 10px;
+  }
+  .aboutWidget h2{
+    font-weight: bolder; padding-bottom: 10px;
+  }
+  .phone{
+    display: flex;
+    font-weight: bolder;
+  }
+  .fphn{
+    font-size: 30px;
+    color:rgb(93, 21, 126) ;
+    padding-left: 2%;
+  }
+  
+  
+  
+  .copyrightrow{
+    display: flex;
+    width: 100%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    /* border: 1px solid black; */
+  }
+  .copyText{
+    padding: 5%;
+    padding-bottom: 0px;
+    font-size: smaller;
+    /* border: 1px solid black; */
+    width: 500px;
+    }
+    .copyMenu{
+      padding: 5%;
+      padding-bottom: 0px;
+      margin-left: 20%;
+      font-size: smaller;
+      /* border: 1px solid black; */
+   
+    }
+    .copyMenu ul li a:hover{
+      color:rgb(116,40,148)  ;
+    }
+    .copyMenu ul li a{
+      text-decoration: none;
+      color: black;
+    }
+  
+    
+  

@@ -1,0 +1,348 @@
+.bleft {
+    display: inline-block; /* Ensures it behaves like a block to allow styling */
+    width: 50px; /* Adjust the length of the line */
+    height: 2px; /* Set the thickness of the line */
+    background-color:rgb(116,40,148); /* Adjust the color as needed */
+    vertical-align: middle; /* Aligns vertically within inline content */
+    margin: 0 auto; /* Center the line horizontally */
+    position: relative; /* Ensures precise positioning if needed */
+    margin-right: 2%;
+    margin-left: 2%;
+    color: rgb(116,40,148);
+  }
+.section{
+    border: 1px solid black;
+    height: 220px;
+    max-height: 220px;
+}
+.srow{
+    /* border: 1px solid black; */
+    margin-top: 110px;
+    margin-left: 5%;
+}
+.section1{
+    /* border: 1px solid black; */
+    display: flex;
+    padding: 3%;
+    padding-right: 0px;
+
+}
+
+.s1Title{
+color: rgb(116,40,148);
+font-weight: bolder;
+}
+.s1secTitle{
+ font-size: xx-large;
+ font-weight: bolder;
+}
+.s1Desc{
+ color: rgb(148, 144, 148) ;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .s1row {
+    display: flex;
+    width: 100%;
+  }
+  .s1col {
+    flex: 1 1 50%; 
+    box-sizing: border-box;
+    padding-right: 2%;
+    padding-left: 3%;
+    
+  }
+  .textContent {
+    flex: 1 1 50%;
+  }
+  
+ .textContent iframe {
+    width: 100%;
+    height: 400px; 
+  }
+/* --------------- */
+.integrate{
+    padding: 5%;
+    text-align: center;
+    align-items: center;
+}
+  /* ----------------s2 */
+
+  .section2 {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  .s2container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .s2Title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    color:rgb(116,40,148) ;
+  }
+ 
+  .s2row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .s2col {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  .s2icon_box_05 {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .s2ib_box {
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid rgb(240, 166, 166);
+    padding: 22px ;
+    max-width: 7%;
+    background-color: white;
+    border-radius: 50%;
+  }
+  .s2col:hover .s2ib_box{
+    background-color:rgb(116,40,148)  ;
+    transition: background-color 0.3s ease;
+  }
+  .s2icon_box_05 h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+  }
+  .s2icon_box_05 p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+  }
+  @media (max-width: 768px) {
+    .s2col {
+      flex: 1 1 100%;
+    }
+  }
+
+  .s2scontainer {
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: space-between; /* Distributes space between items */
+    gap: 16px; /* Optional: adds spacing between items */
+  }
+  
+  .s2ib_box {
+    flex: 0 0 20%; /* Fixed at 30% width */
+    display: flex; /* Optional: to align content inside s2ib_box */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+  }
+  
+  .s2ib2_box {
+    flex: 0 0 80%; /* Fixed at 70% width */
+  }
+  .s2ib2_box  h3{
+    color:rgb(116,40,148) ;
+  } 
+  .s2ib2_box p{
+    color: rgb(149, 146, 150);
+  }
+
+  /* -------- */
+  .section3{
+    background-color:rgb(242, 242, 242) ;
+  }
+  .row{
+    max-width: 100%;
+    padding: 5%;
+  }
+.s3card{
+    background-color: white;
+    border: 1px solid rgb(242, 239, 239);
+    margin-top: 5%;
+    border-radius: 50px;
+}
+.s3card:hover{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+.cardBody{
+    color:#a8a6a6 ;
+    font-size: small;
+    padding: 2%;
+    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+} 
+  
+.addbtn{
+    margin: 2%;
+    padding: 1%;
+    align-items: center;
+    text-align: center;
+    padding-top: 2%;
+    border-radius: 50%;
+    background-color:rgb(125, 51, 156)  ;
+    color: white;
+}
+.expCounter{
+  /* border: 1px solid black; */
+  margin: 5%;
+  min-width: 20px;
+  max-width: 200px;
+  min-height: 160px;
+  border-radius: 10px;
+  color: white;
+  background-color:rgb(145, 78, 176)  ;
+  align-items: center;
+  padding-left: 20%;
+  /* padding-right: -60px; */
+
+}
+.expCounter:hover{
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counter{
+    /* border: 1px solid black; */
+    font-size: 50px;
+}
+.expCounter p{
+    /* border: 1px solid black; */
+    font-size: larger;
+    margin-top: 0px;
+}
+.expCounter h2{
+   margin-bottom: 0px; 
+   /* border: 1px solid black; */
+   width: 50%;
+}
+/* -------- */
+.s3Title{
+    color:rgb(95, 21, 130) ;
+    font-weight: bolder;
+}
+.s3left h1{
+    font-weight: bolder;
+}
+.s3left p{
+    color:rgb(151, 148, 148) ; 
+}
+
+ /* -------------  7*/
+ .s4row {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 5%;
+    /* padding-left: 15%; */
+    padding-right: 15%;
+  }
+  
+  .s4left {
+    flex: 0 0 30%; 
+    max-width: 30%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .s4right {
+    flex: 0 0 70%;
+    max-width: 70%; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  .imageSlider {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden; /* Ensure only 4 images are visible */
+    width: 100%;
+    padding: 5%; /* Add padding for proper spacing */
+  }
+  
+  /* -------------- */
+.section5{
+    /* border: 1px solid black; */
+    max-width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+}
+.section5 {
+    background-color: #f9f9f9; 
+  }
+.textCenter{
+  padding: 0% 10%;
+  padding-bottom: 5%;
+}
+  .textCenter h4{
+    color: rgb(95, 21, 130);
+    font-size: x-large;
+  }
+  .secDesc{
+    font-size: large;
+  }
+  .btndiv{
+    margin-top: 40px;
+  }
+  .stokeText h2 {
+    font-size: 60px;
+    line-height: 1.8px;
+    text-transform: capitalize;
+    color: transparent; /* Make the text color transparent */
+    -webkit-text-stroke: 2px rgba(163, 10, 201, 0.09); 
+    /* color: rgba(237, 27, 36, 0.08); */
+  }
+  
+  .quBtn {
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 40px;
+    color: white;
+    background-color: rgb(95, 21, 130);
+    position: relative;
+    overflow: hidden; /* Clip overflow for animation effect */
+    display: inline-block;
+    z-index: 0; /* Ensure this element stacks properly */
+    transition: color 0.9s ease; /* Smooth text color transition */
+  }
+  
+  .quBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: black; /* Hover color */
+    z-index: -1; /* Place behind the button text */
+    transition: width 0.9s ease, height 0.9s ease; /* Smooth animation */
+    border-radius: inherit; /* Match the button's border-radius */
+  }
+  
+  .quBtn:hover::before {
+    width: 150%; /* Expand to cover button from top-left */
+    height: 150%; /* Expand to cover button from top-left */
+  }
+  
+  .quBtn:hover {
+    color: white; /* Keep text color consistent */
+  }
+  
+  .quBtn span {
+    position: relative;
+    z-index: 1; /* Ensure text stays above the animation */
+  }
+
+  
+ 

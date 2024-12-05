@@ -1,0 +1,33 @@
+html {
+    line-height: 1.5; /* Set global line spacing */
+    font-size: 16px;  /* Base font size */
+  }
+  body {
+    font-family: 'Arial', sans-serif; /* Optional global font family */
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    .Section2 [class*="row"], .Section2 [class*="container"], .Section2 [class*="flex"] {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .Section2 [class*="row"] > *, 
+    .Section2 [class*="container"] > *, 
+    .Section2 [class*="flex"] > * {
+      width: 100%;
+    }
+    .h1.h2.h3.h4.h5.h6.span.p{
+        line-height: 1; /* Set global line spacing */
+
+    }
+}
+.Button.Like{
+  text-decoration: none;
+}
+.a{
+  text-decoration: none;
+}
