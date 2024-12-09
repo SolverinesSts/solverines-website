@@ -5,7 +5,7 @@
 .header03 {
   position: fixed;
   width: 100%;
-  /* border-bottom: 0.2px solid rgb(174, 174, 174); */
+  /* border: 1px solid black; */
   max-width: 100%;
   padding-bottom: 0.1%;
   z-index: 10;
@@ -34,6 +34,7 @@
 }
 
 .header03.scrolled {
+  transition: transform 0.5s ease-in-out;
   background-color: #fefbfb; 
 }
 
@@ -51,10 +52,54 @@
   /* border: 1px solid black; */
   margin-left: -5%;
 }
-.submenu .MuiPaper-root {
-  width: 20%;
-  border-bottom: 2px solid black;
+.submenu {
+  padding: 5%;
+  width: 400px;
+  opacity: 0.8;
+  /* height: 100px; */
 }
+.submenu >* {
+  text-decoration: none;
+ color:rgb(116,40,148) ;
+}
+/* .header03.scrolled.menuLink.submenu .li{
+  color: white;
+} */
+/* .submenu >*   :hover{
+  border:1px solid rgb(116,40,148) ;
+ } */
+.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.li {
+  position: relative;
+  display: inline-block; 
+  text-decoration: none;
+  /* border: 1px solid black; */
+  width: 200px;
+}
+.li:hover{
+  text-decoration: none;
+}
+.li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 0;
+  height: 1px; 
+  background-color: rgb(116, 40, 148); 
+  transition: width 0.5s ease-in-out;
+}
+
+.li:hover::after {
+  width: 90%; 
+}
+
+
+
 
 
 

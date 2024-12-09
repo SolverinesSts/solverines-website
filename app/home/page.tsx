@@ -18,30 +18,7 @@ const SwiperComponent = dynamic(()=> import('./slider'),{
 
 export default function Homes() {
 
-  const CertimageData = certification;
-  // const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  // const [showFirstImage, setShowFirstImage] = useState(true);
-  // const [captionVisible, setCaptionVisible] = useState(false);
-  // const [triVisible, setTriVisible] = useState(false);
-
-  // useEffect(() => {
-  //   let interval: NodeJS.Timeout;
-
-  //   const startSequence = () => {
-  //     setCaptionVisible(true); // Hide captions initially
-  //     setTriVisible(true); // Show the triangles
-  //     interval = setInterval(() => {
-  //       setShowFirstImage((prev) => !prev); // Toggle images
-  //       setTimeout(() => setCaptionVisible(true), 1500); // Show captions after 500ms
-  //       setTimeout(() => setTriVisible(true), 1500); // Show triangles
-  //     }, 6000); // Switch images every 5 seconds
-  //   };
-
-  //   startSequence();
-
-  //   return () => clearInterval(interval); // Cleanup on component unmount
-  // }, []);
-  
+  const CertimageData = certification; 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showFirstImage, setShowFirstImage] = useState(true);
   const [captionVisible, setCaptionVisible] = useState(false);
@@ -171,7 +148,6 @@ export default function Homes() {
     { src: '/images/folio/realestate.png', title: 'Real Estates', link: '#' },
   ];
 
-  // Counter data
   const counters = [
     { id: 1, title: "OutSystems Experts", target: 100 },
     { id: 2, title: "Projects Delivered", target: 120 },
@@ -179,8 +155,8 @@ export default function Homes() {
     { id: 4, title: "Years Of Experience", target: 10 },
   ];
 
-  const [counts, setCounts] = useState(counters.map(() => 0)); // Initial counts are all 0
-  const [hasAnimated, setHasAnimated] = useState(false); // Prevent re-triggering
+  const [counts, setCounts] = useState(counters.map(() => 0)); 
+  const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -237,16 +213,16 @@ export default function Homes() {
             objectFit="cover"
             priority
           /> 
-<div
-  className={`${styles.triangle} ${
-    triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
-  }`}
-></div>
-<div
-  className={`${styles.normaltriangle} ${
-    triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
-  }`}
-></div>
+          <div
+            className={`${styles.triangle} ${
+              triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
+            }`}
+          ></div>
+          <div
+            className={`${styles.normaltriangle} ${
+              triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
+            }`}
+          ></div>
 
 
           <div
@@ -283,16 +259,16 @@ export default function Homes() {
             objectFit="cover"
             priority
           />
-<div
-  className={`${styles.triangle} ${
-    triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
-  }`}
-></div>
-<div
-  className={`${styles.normaltriangle} ${
-    triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
-  }`}
-></div>
+          <div
+            className={`${styles.triangle} ${
+              triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
+            }`}
+          ></div>
+          <div
+            className={`${styles.normaltriangle} ${
+              triVisible && animateTriangles ? styles.trianglevisible : styles.hidden
+            }`}
+          ></div>
           <div
             className={`${styles.caption} ${
               !showFirstImage && captionVisible ? styles.visible : styles.hidden
@@ -356,19 +332,6 @@ export default function Homes() {
   <div  className={styles.earth}>
       <Globe />
     </div> 
-   
-      {/* <div className={styles.logo}>
-      <div className={styles.earth}> */}
-      {/* <Image
-    src="/images/price/worldMap.png"
-    alt="World Map"
-    width={350}
-    height={350}
-    style={{ objectFit: "contain" }} 
-  /> */}
-
-{/* </div> 
-      </div> */}
    </div> 
     </div>
     </section>
@@ -378,15 +341,15 @@ export default function Homes() {
     <Grid container spacing={4}>
       {/* Section Title */}
       <Grid item xs={12} md={6}>
-        <Box className={styles.s3img}>
-          <Typography variant="h6" color="rgb(116,40,148)">
-            <Box component="span" ><span className={styles.bleft}></span>
+        <Box component="div"  className={styles.s3img} >
+          <Typography variant="h6" color="rgb(116,40,148) ">
+            <Box component="span"  ><span className={styles.bleft}></span>
               What we do
             </Box>
           </Typography>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom  fontWeight="bolder" marginTop="5%" >
             We combine the logic, creativity, and curiosity to{" "}
-            <Box component="span" color="rgb(116,40,148) " fontWeight="bold">
+            <Box component="span" color="rgb(116,40,148) " fontWeight="bolder">
               build, solve, and create
             </Box>
           </Typography>
@@ -396,21 +359,21 @@ export default function Homes() {
       {/* Grid items: 6 items in the same size */}
       {services.map((service, index) => (
   <Grid item xs={12} sm={6} md={3} key={service.id} >
-    <Box className={styles.gridItem}
+    <Box component="div" className={styles.gridItem}
       sx={{
         p: 5,
         mx: 3,
         border: "1px solid #ddd",
         borderRadius: 2,
         boxShadow: 1,
-        width: "230px",
+        width: "200px",
         height: "310px",
-        transition: "transform 0.3s",
-        "&:hover": { transform: "scale(1.05)" }, 
+        // transition: "transform 0.3s",
+        // "&:hover": { transform: "scale(1.05)" }, 
       }}
     >
       {/* Image and Title */}
-      <Box sx={{ mb: 2, textAlign: "center" }}>
+      <Box component="div" sx={{ mb: 2, textAlign: "center" }}>
         <img
           src={service.imgSrc}
           alt={service.title}
@@ -430,7 +393,7 @@ export default function Homes() {
 
       {/* Read More Button */}
       <Button className={styles.button}
-        href={service.link}
+        href=""
         variant="contained"
         size="small"  >
         Read More
@@ -465,21 +428,7 @@ export default function Homes() {
     }}
   >
     {industries.map((industry, index) => (
-      <div
-        key={index}
-        className={styles.folioItem}
-        style={{
-          height: "250px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          color: "white",
-          // backgroundImage: `url(${industry.src})`,
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-        }}
-      >
+      <div key={index} className={styles.folioItem} >
           <Image
           src={industry.src}
           alt={industry.title}
@@ -498,7 +447,7 @@ export default function Homes() {
             {industry.title}
           </h1>
          </div>
-         <div className={styles.folioContent}>
+         <div className={styles.folioContentv}>
          <Link href={industry.link} className={styles.fm} style={{textDecoration:"none"}}>
          <Button className={styles.foliobutton}>
             <Image
@@ -524,7 +473,7 @@ export default function Homes() {
     <Grid
       item xs={12} md={4} spacing={4}
       sx={{position: "relative" }} className={styles.s5left}>
-      <Box  className={styles.s5leftbox}
+      <Box  component="div" className={styles.s5leftbox}
         style={{
           position: "absolute",
           top: 0,
@@ -549,7 +498,7 @@ export default function Homes() {
             flexDirection: "column",
           }}
         >
-          <Box>
+          <Box component="div">
             <Typography
               variant="h6"
               sx={{
@@ -577,7 +526,7 @@ export default function Homes() {
               enhance your low-code innovation:
             </Typography>
             {data.map((item, index) => (
-       <Box className={styles.s5box}
+       <Box component="div" className={styles.s5box}
          key={index}
          onMouseEnter={() => setHoveredIndex(index)}
          onMouseLeave={() => setHoveredIndex(null)}
@@ -595,7 +544,7 @@ export default function Homes() {
            },
            }}
         >
-       <Box
+       <Box component="div"
          className="image-circle"
          sx={{
            width: 100, 
@@ -618,7 +567,7 @@ export default function Homes() {
           objectFit: "cover", 
         }}
       />
-      <Box
+      <Box component="div"
         className="number-circle"
         sx={{
           width: 30,
@@ -634,7 +583,6 @@ export default function Homes() {
           top: "-6px",
           left: "-2px",
           boxShadow: "0px 2px 4px rgba(0,0,0,0.3)", 
-          transition: "background-color 0.3s ease, color 0.3s ease", 
         }}
       >
         {item.number}
@@ -642,7 +590,7 @@ export default function Homes() {
     </Box>
 
     {/* Content */}
-    <Box sx={{ ml: 3 }}>
+    <Box  component="div" sx={{ ml: 3 }}>
       <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
         {item.title}
       </Typography>
@@ -665,7 +613,7 @@ export default function Homes() {
         <Grid container spacing={4} justifyContent="center">
           {counters.map((counter, index) => (
             <Grid item xs={12} sm={6} md={3} key={counter.id}>
-              <Box className={styles.s6box} >
+              <Box  component="div" className={styles.s6box} >
                 <Typography variant="h6" fontWeight="bolder">{counter.title}</Typography>
                 <Typography variant="h3" fontWeight="bolder" color="rgb(116,40,148)">
                   {counts[index]} <span><AddIcon/></span> </Typography>

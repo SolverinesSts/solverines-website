@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -72,34 +72,73 @@ const Globe = () => {
       { position: { x: 52.7, y: 37.5, z: -78.5 }, label: "Dubai" },
       { position: { x: -57.3, y: 57.5, z: -60 }, label: "Japan" },
     ];
+  
     const imageTexture = useLoader(THREE.TextureLoader, "/images/bg/pin.png");
-
+  
+    const createTextTexture = (text: string) => {
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+    
+      canvas.width = 256;
+      canvas.height = 128;
+    
+      if (context) {
+        context.font = "bold 90px Arial";
+        context.fillStyle = "#525356"; 
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.clearRect(0, 0, canvas.width, canvas.height); 
+        context.fillText(text, canvas.width / 2, canvas.height / 2); 
+      }
+    
+      return new THREE.CanvasTexture(canvas);
+    };
+  
+    const labelTextures = useMemo(
+      () => markerData.map((marker) => createTextTexture(marker.label)),
+      [markerData]
+    );
+  
     return (
       <>
         {markerData.map((marker, index) => (
           <group key={index}>
-          {/* Red marker */}
-          <sprite position={[marker.position.x, marker.position.y, marker.position.z]} scale={[10, 10, 1]}>
-            <spriteMaterial attach="material" map={imageTexture} />
-          </sprite>
-
-          {/* Label */}
-          <Text
-            position={[
-              marker.position.x,
-              marker.position.y + 10,
-              marker.position.z,
-            ]}
-            scale={[7,5,1]}
-            fontSize={1} 
-            fontWeight={900}
-            color="#989db5" 
-            anchorX="center" 
-            anchorY="middle" 
-          >
-            {marker.label}
-          </Text>
-        </group>
+            {/* Marker */}
+            <sprite
+              position={[
+                marker.position.x,
+                marker.position.y,
+                marker.position.z,
+              ]}
+              scale={[10, 10, 1]}
+            >
+              <spriteMaterial
+                attach="material"
+                map={imageTexture}
+                depthWrite={false}
+                depthTest={false}
+                opacity={0.9}
+              />
+            </sprite>
+  
+            {/* Label */}
+            <sprite
+              position={[
+                marker.position.x,
+                marker.position.y + 10, 
+                marker.position.z,
+              ]}
+              scale={[20, 10, 1]}
+            >
+              <spriteMaterial
+                attach="material"
+                map={labelTextures[index]} 
+                depthWrite={false}
+                depthTest={false}
+                opacity={0.9}
+              />
+            </sprite>
+          </group>
         ))}
       </>
     );

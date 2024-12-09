@@ -1,12 +1,11 @@
-/* Container Styles */
 .bleft {
-  display: inline-block; /* Ensures it behaves like a block to allow styling */
-  width: 50px; /* Adjust the length of the line */
-  height: 2px; /* Set the thickness of the line */
-  background-color:rgb(116,40,148); /* Adjust the color as needed */
-  vertical-align: middle; /* Aligns vertically within inline content */
-  margin: 0 auto; /* Center the line horizontally */
-  position: relative; /* Ensures precise positioning if needed */
+  display: inline-block; 
+  width: 50px;
+  height: 2px; 
+  background-color:rgb(116,40,148); 
+  vertical-align: middle;
+  margin: 0 auto; 
+  position: relative; 
   margin-right: 2%;
   margin-left: 2%;
   color: rgb(116,40,148);
@@ -33,14 +32,14 @@
   transform: translateY(100%);
 }
 
-/* Hide Inactive Images */
+
 .hidden {
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Image Animations */
+
 .imageFromTop {
   opacity: 1;
   z-index: 1;
@@ -52,26 +51,26 @@
   z-index: 1;
   animation: slideInFromBottom 0.3s ease-in-out forwards;
 }
-/* For .triangle animation */
+
 @keyframes moveUpTriangle {
   0% {
-    transform: translateY(100vh); /* Start from below the viewport */
+    transform: translateY(100vh); 
     opacity: 0;
   }
   100% {
-    transform: translateY(0); /* End at the original position */
+    transform: translateY(0); 
     opacity: 1;
   }
 }
 
-/* For .normaltriangle animation */
+
 @keyframes moveUpNormalTriangle {
   0% {
-    transform: translateY(100vh); /* Start from below the viewport */
+    transform: translateY(100vh); 
     opacity: 0;
   }
   100% {
-    transform: translateY(0); /* End at the original position */
+    transform: translateY(0); 
     opacity: 1;
   }
 }
@@ -86,8 +85,8 @@
   border-left: 0 solid transparent;
   border-right: 25vw solid transparent;
   border-top: 75vh solid #8d34db93;
-  opacity: 0; /* Initially hidden */
-  animation: none; /* Default to no animation */
+  opacity: 0; 
+  animation: none; 
 }
 
 .normaltriangle {
@@ -100,26 +99,16 @@
   border-left: 208px solid transparent;
   border-right: 220px solid transparent;
   border-bottom: 320px solid rgba(165, 165, 165, 0.511);
-  opacity: 0; /* Initially hidden */
-  animation: none; /* Default to no animation */
+  opacity: 0;
+  animation: none;
 }
 
-/* When the triVisible class is added, apply animations */
-/* .triangle.trianglevisible {
-  animation: moveUpTriangle 1s ease-in-out forwards;
-}
-
-.normaltriangle.trianglevisible {
-  animation: moveUpNormalTriangle 1s ease-in-out forwards; 
-} */
 .triangle.trianglevisible {
   animation: moveUpTriangle 1s ease-in-out forwards;
   animation-fill-mode: forwards;
 }
 
 .normaltriangle.trianglevisible {
-  /* animation: moveUpNormalTriangle 1s ease-in-out forwards;
-  animation-fill-mode: forwards; */
   animation: moveUpNormalTriangle 1s ease-in-out forwards;
   animation-delay: 0.5s; 
   animation-fill-mode: forwards; 
@@ -269,7 +258,8 @@
 .logo{
   margin-top: 15px;
   color: #51609B;
-  font-weight: bold
+  /* color: #525356; */
+  font-weight: bold;
 }
 @keyframes spin {
   0%{
@@ -299,33 +289,31 @@
 
 
 .gridItem {
-  padding: 16px; /* Equivalent to p: 3 */
-  margin: 16px; /* Equivalent to mx: 3 */
+  padding: 16px; 
+  margin: 16px; 
   border: 1px solid #ddd;
-  border-radius: 8px; /* Equivalent to borderRadius: 2 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 8px; 
   background-color: white;
-  transition: transform 0.3s, background-image 0.3s;
+  /* transition: transform 0.3s, background-image 0.3s; */
 }
 
 .gridItem:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   background-image: url('/images/bg/Frame152.png');
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 
 .s3Title {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
-  /* border: 1px solid black; */
   min-height: 20%;
   display: block;
-   /* or block */
 }
 
 .s3desc {
@@ -391,10 +379,7 @@ color: white;
 } */
 
 /* ----------------- */
-.folioItem:hover image{
-    background-blend-mode: "darken";
-    background-color: "rgba(0, 0, 0, 0.5)";
-}
+
 
 /*  */
 
@@ -409,23 +394,30 @@ color: white;
   margin-top: 2px;
 }
 
+.folioItem:hover image{
+  background-blend-mode: "darken";
+  background-color: "rgba(0, 0, 0, 0.5)";
+}
+
 .folioItem {
   position: relative;
-  overflow: hidden; /* Ensures the effect stays within the grid item */
+  overflow: hidden; 
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
 }
 
 .folioItem img {
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom and filter effect */
+  transition: transform 0.5s ease, filter 0.5s ease; 
 }
 
 .folioItem:hover img {
-  transform: scale(1.1); /* Slight zoom effect */
-  filter: brightness(50%); /* Darken the image */
+  transform: scale(1.1); 
+  filter: brightness(80%); 
 }
-/* .folioItem:hover .folioContent{
-  bottom: 10%;
-} */
-
 .folioContent {
   position: absolute;
   z-index: 2;
@@ -435,18 +427,41 @@ color: white;
   /* height: 30%; */
   overflow: hidden;
   position: relative;
-  /* padding: 0px;
-  margin-left: 0px; */
-  /* margin-bottom: 20px; */
-  /* border: 1px solid black; */
-
+  padding-bottom: 5%;
+}
+.folioContentv {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  /* border: 1px solid black;  */
+  width: 100%;
+ 
 }
 .fm {
   position: absolute;
   opacity: 1;
+  /* border: 1px solid black; */
+  width: 100%;
+  /* transition: transform 1s ease, filter 1s ease;  */
 }
-.folioItem:hover .folioContent{
+.folioItem:hover .folioContentv{
   height: 30%;
+}
+.folioItem:hover .foliobutton{
+  animation: folioInFromLeft 0.7s ease-in-out forwards;
+  padding-left: 18%;
+}
+@keyframes folioInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 .folioItem:hover .fm {
   opacity: 1;
@@ -456,51 +471,61 @@ color: white;
   /* border: 1px solid black; */
   margin-top: 0%;
 }
-.folioItem:hover{
-  
-}
-
-
-
 .cat{
   padding: 0;
   margin: 0;
 }
-
 /* ------------------------- */
 
-.s6box{
-  text-align: "center";
+/* .s5box:hover .image-circle{
+  background-color: rgb(125, 51, 156);
+  color: white;
+  border: 2px solid rgb(125, 51, 156);
+  transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out; 
+} */
+/* ------------------------- */
+
+.s6box {
+  text-align: center; 
   padding: 10%;
   border: 1px solid #ddd;
   border-radius: 2%;
   background: #fff;
-  font-weight:bolder;
+  font-weight: bolder;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-  /* transition: background-color 0.3s ease; */
+  position: relative; 
+  overflow: hidden; 
 }
-.s6box:hover {
-  background-color: rgb(116,40,148) ;
+
+.s6box::before {
+  content: "";
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('/images/bg/box.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.s6box:hover::before {
+  transform: translateY(-100%);
+}
+
+.s6box:hover > * {
+  color: white; 
+  position: relative; 
   z-index: 1;
-  animation: slideInFromBottom6 1s ease forwards;
 }
-.s6box:hover > *{
-color: white;
-}
-@keyframes slideInFromBottom6 {
-  from {
-    background-position: right bottom; /* Start from bottom (0px) */
-  }
-  to {
-    background-position: center center; /* End at the center */
-  }
+.s6box:hover{
+  background-color:  rgb(116,40,148);
 }
 /* ----------- */
-/* styles/Footer.module.css */
+
 .footer_02 {
   background-color: #f8f9fa;
   padding: 20px 0;
@@ -571,7 +596,7 @@ color: white;
 }
 
 .carouselImage:last-child {
-  margin-right: 0; /* Remove margin for the last image */
+  margin-right: 0; 
 }
 
  /* -------------  7*/

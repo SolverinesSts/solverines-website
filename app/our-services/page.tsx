@@ -157,39 +157,38 @@ export default function OurServices(){
      <Fragment>
         <section className={styles.section}
         style={{ backgroundImage: "url(/images/bg/application_services.png)",
-          backgroundSize: "cover", 
-          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
          }}>
       <div className="container largeContainer">
         <div className="row">
           <div className="col-md-8">
-          <div className="row" style={{ display: "flex", alignItems: "center",paddingTop:"10%",paddingLeft:"10%" }}>
+          <div className={styles.srow} style={{ display: "flex", alignItems: "center"}}>
   {/* Left Image Column */}
-  <div className="col-md-2" style={{ textAlign: "center" ,alignItems:"center"}}>
+  <div className="col-md-2" style={{ textAlign: "center" }}>
     <Image
       src="/images/service/icon_4.png"
       alt="Service Icon"
-      width={90}
+      width={80}
       height={80}
     />
   </div>
 
   {/* Right Text Column */}
-  <div className="col-md-10" style={{marginLeft:"2%"}}>
-    <h1 style={{ color: "white", marginBottom: "0px",fontSize:"30px" }}>
+  <div className={styles.colmd10} >
+    <h1 style={{ color: "white", marginBottom: "0px" ,fontSize:"30px"}}>
       Enterprise Application Services
     </h1>
-    <h2 style={{ color: "white" }}>
+    <h2 style={{ color: "white",marginTop:"0px" }}>
       Custom-Built Applications for Your Business Needs.
     </h2>
   </div>
-          </div>
+  </div>
 
-          </div>
-        </div>
-      </div>
-    </section>
+  </div>
+  </div>
+  </div>
+ </section>
 
     <section className={styles.section1}>
       <div className="container largeContainer">

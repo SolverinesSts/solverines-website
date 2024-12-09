@@ -40,24 +40,23 @@ export default function Contact(){
       <div className="container largeContainer">
         <div className="row">
           <div className="col-md-8">
-          <div className="row" style={{ display: "flex", alignItems: "center",paddingTop:"5%" }}>
+          <div className={styles.row} style={{ display: "flex", alignItems: "center"}}>
   {/* Left Image Column */}
   <div className="col-md-2" style={{ textAlign: "center" }}>
     <Image
       src="/images/service/icon_4.png"
       alt="Service Icon"
-      width={70}
-      height={60}
-      style={{ width: "100%", height: "auto" }}
+      width={80}
+      height={80}
     />
   </div>
 
   {/* Right Text Column */}
-  <div className="col-md-10" style={{marginLeft:"2%"}}>
-    <h1 style={{ color: "white", marginBottom: "0px",fontSize:"40px" }}>
+  <div className={styles.colmd10}>
+    <h1 style={{ color: "white", marginBottom: "0px",fontSize:"30px"}}>
     Let's Connect
     </h1>
-    <h2 style={{ color: "white", fontWeight: 400 }}>
+    <h2 style={{ color: "white",marginTop:"0px"}}>
     Reach out for any inquiries, support, or collaboration opportunities.
     </h2>
   </div>
@@ -68,7 +67,7 @@ export default function Contact(){
 </section>
 
 <Box component="section" className={styles.section1}>
-      <Box
+      <Box component="div"
         sx={{
           maxWidth: "100%",
           margin: "0 auto",
@@ -78,22 +77,22 @@ export default function Contact(){
           justifyContent: "space-between",}}>
         {/* Office Address */}
         {datas.map((data, index) => (
-        <Box className={styles.box}
+        <Box component="div" className={styles.box}
           sx={{
             flex: "1",  
             borderRadius: "8px",
             textAlign: "center",
           }}>
 
-          <Box
+          <Box component="div"
             sx={{
               display: "flex"}}>
-          <Box className={styles.iconbox} >
-          <Box className={styles.icon}>
+          <Box  component="div" className={styles.iconbox} >
+          <Box  component="div" className={styles.icon}>
            {data.icon}
           </Box>
           </Box>
-          <Box className={styles.dbox} >
+          <Box  component="div" className={styles.dbox} >
           <Typography variant="h6" component="h3" className={styles.span1}>
             {data.title}
           </Typography>
