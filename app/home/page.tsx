@@ -319,7 +319,7 @@ export default function Homes() {
     </h2>
     <p className={styles.secDesc}>
       We have successfully delivered customized low-code solutions to clients across diverse industries worldwide, driving impactful digital transformations. Our expertise ensures 
-      each solution is tailored to meet specific business needs, resulting in enhanced efficiency, productivity, and innovation in today's fast-paced digital landscape.
+      each solution is tailored to meet specific business needs, resulting in enhanced efficiency, productivity, and innovation in today&apos;s fast-paced digital landscape.
     </p>
     <p style={{ marginTop: "5%" }}className={styles.secDesc}>
       From consulting to implementation and support, our comprehensive suite of
@@ -359,7 +359,8 @@ export default function Homes() {
       {/* Grid items: 6 items in the same size */}
       {services.map((service, index) => (
   <Grid item xs={12} sm={6} md={3} key={service.id} >
-    <Box component="div" className={styles.gridItem}
+    <Box key={service.id || index}
+     component="div" className={styles.gridItem}
       sx={{
         p: 5,
         mx: 3,

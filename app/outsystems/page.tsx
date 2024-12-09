@@ -97,10 +97,9 @@ export default function Outsystems(){
     },
   ];
 
-  const [activeCardId, setActiveCardId] = useState(null);
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
 
-  const handleCardClick = (id : any) => {
-    // Toggle active card
+  const handleCardClick = (id : string) => {
     setActiveCardId((prevActiveId) => (prevActiveId === id ? null : id));
   };
 
@@ -114,7 +113,7 @@ const animateCounters = () => {
   const duration = 2000; // Animation duration in milliseconds
   const startTime = performance.now();
 
-  const update = (currentTime:any) => {
+  const update = (currentTime:number) => {
     const elapsedTime = currentTime - startTime;
     const progress = Math.min(elapsedTime / duration, 1); // Cap progress at 1
 
@@ -164,9 +163,9 @@ useEffect(() => {
               Empower Your Business with <span style={{color:"rgb(116,40,148)"}}>OutSystems</span>
             </h1>
             <p className={styles.s1Desc}>
-              In today's fast-paced digital world, businesses need to innovate rapidly to stay ahead of the competition. 
+              In today&apos;s fast-paced digital world, businesses need to innovate rapidly to stay ahead of the competition. 
               OutSystems offers a revolutionary low-code platform that empowers organizations to develop, deploy, and manage 
-              applications quickly and efficiently. Whether you're looking to build enterprise-grade applications, modernize legacy systems, 
+              applications quickly and efficiently. Whether you&apos;re looking to build enterprise-grade applications, modernize legacy systems, 
               or create customer-facing mobile apps, OutSystems provides the tools you need to succeed.
             </p>
           </div>

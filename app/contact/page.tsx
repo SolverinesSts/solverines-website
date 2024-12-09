@@ -9,6 +9,7 @@ import { Box, Typography } from "@mui/material";
 export default function Contact(){
   const datas = [
     {
+      id:1,
       icon: <LocationOnOutlinedIcon />, 
       number: "01",
       title: "Office Address:",
@@ -16,12 +17,14 @@ export default function Contact(){
         "S-16, 3rd Floor, Siddharth, 15th Main Road, ThiruViKa / SIDCO Industrial Estate, Guindy, Chennai 600032, Tamil Nadu, India.",
     },
     {
+      id:2,
       icon: <LocalPhoneOutlinedIcon />,
       number: "02",
       title: "Call Us For Help:",
       description: "+91 7550042242",
     },
     {
+      id:3,
       icon: <MailOutlinedIcon />,
       number: "03",
       title: "Mail info:",
@@ -54,7 +57,7 @@ export default function Contact(){
   {/* Right Text Column */}
   <div className={styles.colmd10}>
     <h1 style={{ color: "white", marginBottom: "0px",fontSize:"30px"}}>
-    Let's Connect
+    Let&apos;s Connect
     </h1>
     <h2 style={{ color: "white",marginTop:"0px"}}>
     Reach out for any inquiries, support, or collaboration opportunities.
@@ -77,7 +80,8 @@ export default function Contact(){
           justifyContent: "space-between",}}>
         {/* Office Address */}
         {datas.map((data, index) => (
-        <Box component="div" className={styles.box}
+        <Box key={data.id || index}
+        component="div" className={styles.box}
           sx={{
             flex: "1",  
             borderRadius: "8px",

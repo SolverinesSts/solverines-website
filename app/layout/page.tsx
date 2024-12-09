@@ -16,10 +16,10 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 export default function Layout() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [servicesMenuAnchor, setServicesMenuAnchor] = React.useState(null);
-  const [industriesMenuAnchor, setIndustriesMenuAnchor] = React.useState(null);
+  const [servicesMenuAnchor, setServicesMenuAnchor] =useState<null | HTMLElement>(null);
+  const [industriesMenuAnchor, setIndustriesMenuAnchor] = useState<null | HTMLElement>(null);
 
-  const openServicesMenu = (event: any) => {
+  const openServicesMenu = (event:React.MouseEvent<HTMLButtonElement>) => {
     setServicesMenuAnchor(event.currentTarget);
   };
 
@@ -27,7 +27,7 @@ export default function Layout() {
     setServicesMenuAnchor(null);
   };
 
-  const openIndustriesMenu = (event: any) => {
+  const openIndustriesMenu = (event:React.MouseEvent<HTMLButtonElement>) => {
     setIndustriesMenuAnchor(event.currentTarget);
   };
 

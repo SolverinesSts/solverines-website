@@ -2,10 +2,9 @@
 
 import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Points } from "../util/data";
-import { Text } from "@react-three/drei";
 
 interface Point {
   x: number;

@@ -102,14 +102,13 @@ export default function OurServices(){
         },
       ];
 
-      const [activeCardId, setActiveCardId] = useState(null);
+      const [activeCardId, setActiveCardId] = useState<string | null>(null);
       //setActiveCardId((prevActiveId) => (prevActiveId === null ? 1 : null))
-      const handleCardClick = (id : any) => {
-        // Toggle active card
-        setActiveCardId((prevActiveId) => (prevActiveId === id ? null : id));
+      const handleCardClick = (id : string) => {
+        setActiveCardId((prevActiveId) => (prevActiveId === id ? "null" : id));
       };
 
-      const [counters, setCounters] = useState([0, 0, 0]); // State for the counters
+  const [counters, setCounters] = useState([0, 0, 0]); // State for the counters
   const sectionRef = useRef(null); // Ref for the section
   const hasAnimated = useRef(false); // To ensure animation runs only once per page load
 
@@ -120,7 +119,7 @@ export default function OurServices(){
     const duration = 2000; // Animation duration in milliseconds
     const startTime = performance.now();
 
-    const update = (currentTime:any) => {
+    const update = (currentTime:number) => {
       const elapsedTime = currentTime - startTime;
       const progress = Math.min(elapsedTime / duration, 1); // Cap progress at 1
 
@@ -201,7 +200,7 @@ export default function OurServices(){
           <div className={styles.s1left} style={{ flex: "1 1 50%" }}>
             <h1 className={styles.s1secTitle}>Custom-Built Applications</h1>
             <p className={styles.secDesc}>
-              In today’s fast-paced digital world, applications are the backbone of modern business operations. Whether you're looking to enhance customer experiences, streamline operations, or gain a competitive edge, having the right applications in place is essential. At Solverines, we offer a comprehensive range of application services designed to meet the unique demands of your business and industry.
+              In today’s fast-paced digital world, applications are the backbone of modern business operations. Whether you&apos;re looking to enhance customer experiences, streamline operations, or gain a competitive edge, having the right applications in place is essential. At Solverines, we offer a comprehensive range of application services designed to meet the unique demands of your business and industry.
             </p>
             <div >
               {customBuild.map((item, index) => (

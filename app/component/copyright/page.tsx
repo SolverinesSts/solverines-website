@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import styles from "./copyright.module.css";
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
-import Image from "next/image";
 
 export default function Copyrights(){
     return(

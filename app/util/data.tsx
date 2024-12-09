@@ -1,65 +1,81 @@
 export const certification=[
     {
+      id:"1",
       imageUrl:"/images/certification/11.png",
       imageAlt:"mobile developer"
     },
     {
+      id:"2",
       imageUrl:"/images/certification/architecture-specialist-11.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"3",
       imageUrl:"/images/certification/Architecture.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"4",
       imageUrl:"/images/certification/front-end-developer-11.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"5",
       imageUrl:"/images/certification/Group 1597881468.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"6",
       imageUrl:"/images/certification/Group 1597881472.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"7",
       imageUrl:"/images/certification/mobiledev.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"8",
       imageUrl:"/images/certification/ODC.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"9",
       imageUrl:"/images/certification/ProfessionalMobile.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"10",
       imageUrl:"/images/certification/ProfessionalWeb.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"11",
       imageUrl:"/images/certification/reactive-web-developer-specialist.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"12",
       imageUrl:"/images/certification/Reactive.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"13",
       imageUrl:"/images/certification/Security.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"14",
       imageUrl:"/images/certification/Tech Lead.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"15",
       imageUrl:"/images/certification/techlead.png",
       imageAlt:"architecture specialist"
     },
     {
+      id:"16",
       imageUrl:"/images/certification/webdevpro.png",
       imageAlt:"architecture specialist"
     },
@@ -68,42 +84,52 @@ export const certification=[
    
   export const integeration =[  
       {
+          id:"1",
           imageUrl:"/images/integrations/Aws.png",
           imageAlt:"Aws"
       },
       {
+        id:"2",
           imageUrl:"/images/integrations/Docusign.png",
           imageAlt:"Docusing"
       },
       {
+        id:"3",
           imageUrl:"/images/integrations/LinkedIn.png",
           imageAlt:"LinkedIn"
       },
       {
+        id:"4",
           imageUrl:"/images/integrations/Office365.png",
           imageAlt:"Office365"
       },
       {
+        id:"5",
           imageUrl:"/images/integrations/Oracle.png",
           imageAlt:"Oracle"
       },
       {
+        id:"6",
           imageUrl:"/images/integrations/outsystems.png",
           imageAlt:"Outsystems"
       },
       {
+        id:"7",
           imageUrl:"/images/integrations/Paypal.png",
           imageAlt:"Paypal"
       },
       {
+        id:"8",
           imageUrl:"/images/integrations/salesforce.png",
           imageAlt:"Salesforce"
       },
       {
+        id:"9",
           imageUrl:"/images/integrations/Snowflake.png",
           imageAlt:"Snowflake"
       },
       {
+        id:"10",
           imageUrl:"/images/integrations/SqlServer.png",
           imageAlt:"SqlServer"
       },
