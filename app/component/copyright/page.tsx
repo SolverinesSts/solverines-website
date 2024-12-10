@@ -28,10 +28,10 @@ export default function Copyrights(){
             </div>
               <div className={styles.copyMenu}>
                 <ul>
-                  <li><a href="javascript:void(0);">Home</a></li>
-                  <li><a href="javascript:void(0);">Outsystems</a></li>
-                  <li><a href="javascript:void(0);">Contact</a></li>
-                  <li><a href="javascript:void(0);">About</a></li>
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Outsystems</a></li>
+                  <li><a href="">Contact</a></li>
+                  <li><a href="">About</a></li>
                 </ul>
               </div>
           </div>

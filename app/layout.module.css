@@ -23,9 +23,12 @@
   /* padding: 2.2%; */
   /* border: 1px solid black; */
 }
-/* .menuLink:hover{
-  border-bottom:1px solid white
-} */
+@media (max-width: 1000px) {
+  .menuLink,
+  .contact {
+    display: none;
+  }
+}
 .serach{
   padding-left: 3%;
   border-left: 1px solid white;

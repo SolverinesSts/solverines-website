@@ -12,6 +12,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import styles from '../layout.module.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import { IconButton } from '@mui/material';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Layout() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,12 +45,20 @@ export default function Layout() {
     } else if (scrollY >= 500) {
       setHidden(false); 
       setScrolled(true);
+      setShowScrollTop(scrollY > window.innerHeight);
     } else {
       setHidden(false); 
       setScrolled(false);
     }
   };
 
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
@@ -58,6 +69,7 @@ export default function Layout() {
   }, []);
 
   return (
+    <>
     <AppBar
       className={`${styles.header03} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}
     >
@@ -74,7 +86,7 @@ export default function Layout() {
               />
             </Link>
           </Grid>
-
+          
           {/* Navigation Menu */}
           <Grid item xs={8} md={6} className={styles.navMenu}>
             <Grid display="flex" justifyContent="center">
@@ -144,7 +156,7 @@ export default function Layout() {
                 Contact
               </Button>
             </Grid>
-          </Grid>
+          </Grid> 
 
           {/* Contact Info and Search */}
           <Grid
@@ -154,7 +166,7 @@ export default function Layout() {
             className={`${styles.contact} ${scrolled ? styles.scrolled : ''}`}
           >
             <Grid display="flex" alignItems="center" justifyContent="flex-end" gap={2}>
-              <Grid display="flex" alignItems="center">
+              <Grid display="flex" alignItems="center" >
                 <ChatOutlinedIcon sx={{ fontSize: '40px', paddingRight: '5%' }} />
                 <Typography variant="body2" ml={1}>
                   Phone:+91 7550042242
@@ -168,7 +180,26 @@ export default function Layout() {
             </Grid>
           </Grid>
         </Grid>
+        {/* <Grid ><MenuIcon/></Grid> */}
       </Toolbar>
     </AppBar>
+
+          {/* Scroll to Top Button */}
+          {showScrollTop && (
+            <IconButton
+              onClick={scrollToTop}
+              style={{
+                position: 'fixed',
+                bottom: '20px',
+                right: '20px',
+                backgroundColor: ' rgb(116,40,148)',
+                color: '#fff',
+                zIndex: 1000,
+              }}
+            >
+              <KeyboardDoubleArrowUpIcon />
+            </IconButton>
+          )}
+        </>
   );
 }

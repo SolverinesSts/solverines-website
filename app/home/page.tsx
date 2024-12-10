@@ -60,7 +60,7 @@ export default function Homes() {
       imgSrc: "/images/bg/low code.png",
       description:
         "Accelerate application development with low-code platforms for rapid deployment and scalability....",
-      link: "~/home/Outsystems",
+      link: "/outsystems",
     },
     {
       id: 2,
@@ -68,7 +68,7 @@ export default function Homes() {
       imgSrc: "/images/bg/cloud services.png",
       description:
         "In today's fast-paced digital landscape, businesses need to be agile, scalable, and secure. Our Cloud & DevOps services are ....",
-      link: "~/home/CloudService",
+      link: "",
     },
     {
       id: 3,
@@ -76,7 +76,7 @@ export default function Homes() {
       imgSrc: "/images/bg/application services.png",
       description:
         "In an era where digital transformation is key, our Application Services are designed to deliver robust...",
-      link: "~/home/AppService",
+      link: "/our-services",
     },
     {
       id: 4,
@@ -84,7 +84,7 @@ export default function Homes() {
       imgSrc: "/images/bg/platform service.png",
       description:
         "In today’s fast-paced market, the ability to innovate, develop, and deliver high-quality products is crucial to staying competitive.....",
-      link: "#",
+      link: "",
     },
     {
       id: 5,
@@ -92,7 +92,7 @@ export default function Homes() {
       imgSrc: "/images/bg/data analytics & ai.png",
       description:
         "Harness the power of data and automation to drive smarter decision-making and operational efficiency...",
-      link: "~/home/AppService",
+      link: "/our-services",
     },
     {
       id: 6,
@@ -100,7 +100,7 @@ export default function Homes() {
       imgSrc: "/images/bg/it_consulting.png",
       description:
         "Expert advice to help you leverage technology for business growth and digital transformation....",
-      link: "#",
+      link: "",
     },
   ];
 
@@ -383,9 +383,8 @@ export default function Homes() {
       </Box>
 
       <Typography variant="h6" className={styles.s3Title}>
-        <a href={service.link} className={styles.s3Title}>
           {service.title}
-        </a>
+        
       </Typography>
 
       <Typography variant="body2"  className={styles.s3desc}>
@@ -394,7 +393,7 @@ export default function Homes() {
 
       {/* Read More Button */}
       <Button className={styles.button}
-        href=""
+        href={service.link}
         variant="contained"
         size="small"  >
         Read More
