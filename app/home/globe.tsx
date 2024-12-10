@@ -144,7 +144,7 @@ const Globe = () => {
   };
 
   return (
-    <div style={{ width: "600px", height: "500px",position: "relative", backgroundColor: "white" }} id="globe">
+    <div style={{ width: "100%", height: "100%",position: "relative", backgroundColor: "white" }} id="globe">
       <Canvas    camera={{ position: [0, 0, 380], fov: 35}}>
         <ambientLight intensity={1} />
         <directionalLight position={[4, 4, 4]} intensity={1} />

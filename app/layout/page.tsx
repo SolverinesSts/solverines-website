@@ -21,6 +21,7 @@ export default function Layout() {
   const [hidden, setHidden] = useState(false);
   const [servicesMenuAnchor, setServicesMenuAnchor] =useState<null | HTMLElement>(null);
   const [industriesMenuAnchor, setIndustriesMenuAnchor] = useState<null | HTMLElement>(null);
+  const [menuIconAnchor, setMenuIconAnchor] = useState<null | HTMLElement>(null);
 
   const openServicesMenu = (event:React.MouseEvent<HTMLButtonElement>) => {
     setServicesMenuAnchor(event.currentTarget);
@@ -37,6 +38,15 @@ export default function Layout() {
   const closeIndustriesMenu = () => {
     setIndustriesMenuAnchor(null);
   };
+
+  const openMenuIcon = (event:React.MouseEvent<HTMLButtonElement>) => {
+    setMenuIconAnchor(event.currentTarget);
+  };
+
+  const closeMenuIcon = () => {
+    setMenuIconAnchor(null);
+  };
+
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -180,7 +190,32 @@ export default function Layout() {
             </Grid>
           </Grid>
         </Grid>
-        {/* <Grid ><MenuIcon/></Grid> */}
+        {/* <Grid ><MenuIcon /></Grid> */}
+        <Button onClick={openMenuIcon} className={styles.menuicon} >
+          <MenuIcon />
+              </Button>
+              <Menu 
+                className={styles.submenu}
+                anchorEl={menuIconAnchor}
+                open={Boolean(menuIconAnchor)}
+                onClose={closeMenuIcon}
+              >
+                <MenuItem component={Link} href="/" onClick={closeMenuIcon } className={styles.iconli}>
+                 Home
+                </MenuItem>
+                <MenuItem component={Link} href="/outsystems" onClick={closeMenuIcon } className={styles.iconli}>
+                OutSystems
+                </MenuItem>
+                <MenuItem component={Link} href="/our-services" onClick={closeMenuIcon } className={styles.iconli}>
+                Our Services
+                </MenuItem>
+                <MenuItem component={Link} href="/our-services" onClick={closeMenuIcon} className={styles.iconli}>
+                Industries
+                </MenuItem>
+                <MenuItem component={Link} href="/contact" onClick={closeMenuIcon } className={styles.iconli}>
+                Contact
+                </MenuItem>
+              </Menu>
       </Toolbar>
     </AppBar>
 

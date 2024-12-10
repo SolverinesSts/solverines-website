@@ -29,6 +29,11 @@
     display: none;
   }
 }
+@media (min-width: 1000px) {
+  .menuicon{
+    display: none;
+  }
+}
 .serach{
   padding-left: 3%;
   border-left: 1px solid white;
@@ -100,7 +105,28 @@
 .li:hover::after {
   width: 90%; 
 }
+.menuicon{
+  color: white;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  max-width: 200px;
+}
+.iconli::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 0;
+  height: 1px; 
+  background-color: rgb(116, 40, 148); 
+  transition: width 0.5s ease-in-out;
+}
 
+.iconli:hover::after {
+  width: 90%; 
+}
 
 
 
