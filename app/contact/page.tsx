@@ -47,7 +47,7 @@ export default function Contact(){
   {/* Left Image Column */}
   <div className="col-md-2" style={{ textAlign: "center" }}>
     <Image
-      src="/images/service/icon_4.png"
+      src="/images/Service/icon_4.png"
       alt="Service Icon"
       width={80}
       height={80}
