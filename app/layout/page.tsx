@@ -118,7 +118,7 @@ export default function Layout() {
                 <MenuItem component={Link} href="/outsystems" onClick={closeServicesMenu} className={styles.li}>
                   Low Code Development
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeServicesMenu} className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeServicesMenu} className={styles.li}>
                   Cloud Services
                 </MenuItem>
                 <MenuItem component={Link} href="/outsystems" onClick={closeServicesMenu} className={styles.li}>
@@ -143,22 +143,22 @@ export default function Layout() {
                 open={Boolean(industriesMenuAnchor)}
                 onClose={closeIndustriesMenu}
               >
-                <MenuItem component={Link} href="/our-services" onClick={closeIndustriesMenu } className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeIndustriesMenu } className={styles.li}>
                   Automotive
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeIndustriesMenu } className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeIndustriesMenu } className={styles.li}>
                   Consumer Goods
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeIndustriesMenu } className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeIndustriesMenu } className={styles.li}>
                   Financial Services
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeIndustriesMenu } className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeIndustriesMenu } className={styles.li}>
                   Healthcare
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeIndustriesMenu } className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeIndustriesMenu } className={styles.li}>
                   Logistics
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeIndustriesMenu } className={styles.li}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeIndustriesMenu } className={styles.li}>
                   Real Estates
                 </MenuItem>
               </Menu>
@@ -206,10 +206,10 @@ export default function Layout() {
                 <MenuItem component={Link} href="/outsystems" onClick={closeMenuIcon } className={styles.iconli}>
                 OutSystems
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeMenuIcon } className={styles.iconli}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeMenuIcon } className={styles.iconli}>
                 Our Services
                 </MenuItem>
-                <MenuItem component={Link} href="/our-services" onClick={closeMenuIcon} className={styles.iconli}>
+                <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeMenuIcon} className={styles.iconli}>
                 Industries
                 </MenuItem>
                 <MenuItem component={Link} href="/contact" onClick={closeMenuIcon } className={styles.iconli}>

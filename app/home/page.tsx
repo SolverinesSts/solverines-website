@@ -76,7 +76,7 @@ export default function Homes() {
       imgSrc: "/images/bg/application services.png",
       description:
         "In an era where digital transformation is key, our Application Services are designed to deliver robust...",
-      link: "/our-services",
+      link: "/our-services/cloud-services",
     },
     {
       id: 4,
@@ -92,7 +92,7 @@ export default function Homes() {
       imgSrc: "/images/bg/data analytics & ai.png",
       description:
         "Harness the power of data and automation to drive smarter decision-making and operational efficiency...",
-      link: "/our-services",
+      link: "/our-services/cloud-services",
     },
     {
       id: 6,
