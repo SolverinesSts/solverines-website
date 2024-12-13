@@ -309,7 +309,7 @@ export default function Homes() {
               </Typography>
               <Typography variant="h5" className={styles.secTitle} gutterBottom>
                 Transforming Businesses with Low Code Solutions using 
-                <Box component="span" color="rgb(116,40,148)">OutSystems</Box>
+                <Box component="span" color="rgb(116,40,148)" className={styles.s2span}> OutSystems</Box>
               </Typography>
               <Typography variant="body1" className={styles.secDesc} paragraph sx={{ mt: 3}}>
                 We have successfully delivered customized low-code solutions to clients across diverse industries worldwide, driving impactful digital transformations. Our expertise ensures each solution is tailored to meet specific business needs, resulting in enhanced efficiency, productivity, and innovation in today&apos;s fast-paced digital landscape.
