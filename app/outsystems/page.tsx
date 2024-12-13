@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import Copyrights from "../component/copyright/page";
 import { certification, integeration } from "../util/data";
 import Marquee from "react-fast-marquee";
+import { Box, Grid } from "@mui/material";
 
 const SwiperComponent = dynamic(()=> import('../home/slider'),{
   ssr: false,
@@ -103,7 +104,7 @@ export default function Outsystems(){
     setActiveCardId((prevActiveId) => (prevActiveId === id ? null : id));
   };
 
-  const [counters, setCounters] = useState([0, 0, 0]); // State for the counters
+  const [counters, setCounters] = useState([10, 100, 70]); // State for the counters
 const sectionRef = useRef(null); // Ref for the section
 const hasAnimated = useRef(false); // To ensure animation runs only once per page load
 
@@ -155,9 +156,9 @@ useEffect(() => {
     </section>
 
     <section className={styles.section1}>
-      <div className={styles.container}>
-      <div className={styles.s1row}>
-          <div className={styles.s1col}>
+      <Grid className={styles.container} container rowSpacing={1}  >
+      <Grid className={styles.s1row} item xs={12} sm={12} md={6} >
+          <Box component="div" className={styles.s1col}>
             <div className={styles.s1Title}>The Leading Low-Code Development Platform</div>
             <h1 className={styles.s1secTitle}>
               Empower Your Business with <span style={{color:"rgb(116,40,148)"}}>OutSystems</span>
@@ -168,20 +169,22 @@ useEffect(() => {
               applications quickly and efficiently. Whether you&apos;re looking to build enterprise-grade applications, modernize legacy systems, 
               or create customer-facing mobile apps, OutSystems provides the tools you need to succeed.
             </p>
-          </div>
-          <div className={styles.textContent}>
-            <iframe
-              title="An Overview of High-Performance Low-Code on the OutSystems Platform in 2 Minutes!"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/0gx3hMMDOZI?start=25&amp;feature=oembed&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.linkit.nl"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
+          </Box>
+     </Grid>
+     <Grid className={styles.s1row} item xs={12} sm={12} md={6}>
+       <Box component="div" className={styles.textContent}>
+         <iframe
+           title="An Overview of High-Performance Low-Code on the OutSystems Platform in 2 Minutes!"
+           width="100%"
+           height="100%"
+           src="https://www.youtube.com/embed/0gx3hMMDOZI?start=25&amp;feature=oembed&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.linkit.nl"
+           frameBorder="0"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+           allowFullScreen
+         ></iframe>
+       </Box>
+      </Grid>
+      </Grid>
     </section>
 
     <section className={styles.section2} 
@@ -189,37 +192,37 @@ useEffect(() => {
       backgroundImage: "url('/images/bg/3.jpg')",
       backgroundSize: "cover", 
       backgroundRepeat: "no-repeat",
-    }}>
-      <div className={styles.s2container}>
-        <div className={styles.s2Title}>
+}}>
+      <Grid className={styles.s2container}>
+        <Box component="div" className={styles.s2Title}>
           <span className={styles.bleft}></span>Why Choose OutSystems?
-        </div>
-        <div className={styles.s2row}>
+        </Box>
+        <Grid className={styles.s2row}>
       {features.map((feature, index) => (
-        <div
+        <Grid
           className={styles.s2col}
           key={index}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <div className={styles.s2scontainer}>
-            <div className={styles.s2ib_box}>
+          <Grid className={styles.s2scontainer}>
+            <Box component="div" className={styles.s2ib_box}>
               <Image
                 src={hoveredIndex === index ? feature.hover : feature.icon}
                 alt="Service Icon"
                 width={40}
                 height={40}
               />
-            </div>
-            <div className={styles.s2ib2_box}>
+            </Box>
+            <Box component="div" className={styles.s2ib2_box}>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Grid>
+        </Grid>
       ))}
-    </div>
-      </div>
+    </Grid>
+      </Grid>
     </section>
 <section  className={styles.integrate} 
      style={{
@@ -259,7 +262,7 @@ useEffect(() => {
              deep expertise, a customer-centric approach, and a commitment to excellence to deliver outstanding results for our clients.
             </p>
             <h4>Here’s why we stand out as your ideal OutSystems partner:</h4>
-            <div className={`${styles.accordion} ${styles.quAccordion}`} id="quAccordion01">
+            <div>
               {/* Accordion Items */}
               {accordionItems.map(({ id, title, description }) => (
                 <div className={styles.s3card} key={id}>
@@ -349,24 +352,24 @@ useEffect(() => {
       backgroundSize: "cover", 
       backgroundRepeat: "no-repeat",
     }}>
-    <div className="container largeContainer">
-    <div className={styles.s4row}>
-      {/* Left Image Column */}
-      <div className={styles.s4left}>
-        <Image
-          src="/images/bg/outsystems-sales-delivery.png"
-          alt="Outsystems Sales Delivery"
-          width={350}
-          height={100}
-        />
-      </div>
-      <div className={styles.s4right}>
-        <div className={styles.imageSlider}>
-          <SwiperComponent InputData={CertimageData}/>
-        </div>
-      </div>
-    </div>
-  </div>
+        <Grid className={styles.s7row} container rowSpacing={1} >
+          <Grid xs={12} sm={6} md={3} >
+            {/* Left Image Column */}
+            <Box component="div" className={styles.s7left}>
+              <Image
+                src="/images/bg/outsystems-sales-delivery.png"
+                alt="Outsystems Sales Delivery"
+                width={200}
+                height={100}
+              />
+            </Box>
+          </Grid>
+            <Grid className={styles.s7right} xs={12} sm={12} md={9}>
+              <Box component="div" className={styles.imageSlider}>
+                <SwiperComponent InputData={CertimageData} />
+              </Box>
+            </Grid>
+        </Grid>
 </section>
 
 <section className={styles.section5}>

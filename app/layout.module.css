@@ -13,6 +13,7 @@
   background-color: none;
   margin-left:0px ;
   margin: 0px;
+  min-height: 50px;
 }
 .menuLink{
   color: white;
@@ -70,12 +71,7 @@
   text-decoration: none;
  color:rgb(116,40,148) ;
 }
-/* .header03.scrolled.menuLink.submenu .li{
-  color: white;
-} */
-/* .submenu >*   :hover{
-  border:1px solid rgb(116,40,148) ;
- } */
+
 .hidden {
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
@@ -112,6 +108,9 @@
   align-items: center;
   align-content: center;
   max-width: 200px;
+}
+.header03.scrolled .menuicon {
+  color: rgb(7, 6, 6);
 }
 .iconli::after {
   content: '';

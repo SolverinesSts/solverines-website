@@ -44,10 +44,6 @@ font-weight: bolder;
     display: flex;
     flex-wrap: wrap;
   }
-  .s1row {
-    display: flex;
-    width: 100%;
-  }
   .s1col {
     flex: 1 1 50%; 
     box-sizing: border-box;
@@ -167,11 +163,13 @@ font-weight: bolder;
     max-width: 100%;
     padding: 5%;
   }
+
 .s3card{
     background-color: white;
-    border: 1px solid rgb(242, 239, 239);
+    border: 0.5px solid rgb(242, 239, 239);
     margin-top: 5%;
-    border-radius: 50px;
+    border-radius: 35px;
+    /* padding: 0px; */
 }
 .s3card:hover{
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
@@ -193,6 +191,24 @@ font-weight: bolder;
     background-color:rgb(125, 51, 156)  ;
     color: white;
 }
+
+@media screen and (max-width: 1000px) {
+  .section3 .row {
+    flex-direction: column;
+  }
+
+  .s3left {
+    flex: 100%; 
+    padding-right: 0;
+  }
+
+  .expCounter {
+    flex: 100%; 
+    margin: 20px 0; 
+    right: 0 !important; 
+  }
+}
+
 .expCounter{
   /* border: 1px solid black; */
   margin: 5%;
@@ -230,45 +246,13 @@ font-weight: bolder;
     color:rgb(95, 21, 130) ;
     font-weight: bolder;
 }
-.s3left h1{
+.s3h1{
     font-weight: bolder;
 }
-.s3left p{
+.s3p{
     color:rgb(151, 148, 148) ; 
 }
 
- /* -------------  7*/
- .s4row {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 5%;
-    /* padding-left: 15%; */
-    padding-right: 15%;
-  }
-  
-  .s4left {
-    flex: 0 0 30%; 
-    max-width: 30%; 
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-  }
-  
-  .s4right {
-    flex: 0 0 70%;
-    max-width: 70%; 
-    display: flex;
-    align-items: center; 
-  }
-  
-  .imageSlider {
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden; /* Ensure only 4 images are visible */
-    width: 100%;
-    padding: 5%; /* Add padding for proper spacing */
-  }
   
   /* -------------- */
 .section5{
@@ -344,5 +328,14 @@ font-weight: bolder;
     z-index: 1; /* Ensure text stays above the animation */
   }
 
-  
+  .s7row{
+    /* border: 1px solid black ; */
+    /* padding: 0% 5%; */
+    padding: 40px 185px 36px;
+  }
+  @media (max-width: 1000px) {
+    .s7row {
+      padding: 0% 5%;
+    }
+  }
  

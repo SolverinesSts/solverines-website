@@ -4,7 +4,7 @@ import Image from "next/image";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 export default function Contact(){
   const datas = [
@@ -69,47 +69,51 @@ export default function Contact(){
 </div>
 </section>
 
-<Box component="section" className={styles.section1}>
-      <Box component="div"
+<section  className={styles.section1}>
+<Grid
+  container
+  spacing={2} // Adds spacing between items
+>
+  {datas.map((data, index) => (
+    <Grid
+      item
+      key={data.id || index}
+      xs={12} // 1 item per row for extra-small screens
+      sm={6}  // 2 items per row for small screens
+      md={6}  // 2 items per row for medium screens
+      lg={4}  // 3 items per row for large screens
+      sx={{
+        borderRadius: "8px",
+        textAlign: "center",
+      }}
+    >
+      <Box
+        component="div"
         sx={{
-          maxWidth: "100%",
-          margin: "0 auto",
           display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-          justifyContent: "space-between",}}>
-        {/* Office Address */}
-        {datas.map((data, index) => (
-        <Box key={data.id || index}
-        component="div" className={styles.box}
-          sx={{
-            flex: "1",  
-            borderRadius: "8px",
-            textAlign: "center",
-          }}>
-
-          <Box component="div"
-            sx={{
-              display: "flex"}}>
-          <Box  component="div" className={styles.iconbox} >
-          <Box  component="div" className={styles.icon}>
-           {data.icon}
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <Box component="div" className={styles.iconbox}>
+          <Box component="div" className={styles.icon}>
+            {data.icon}
           </Box>
-          </Box>
-          <Box  component="div" className={styles.dbox} >
+        </Box>
+        <Box component="div" className={styles.dbox}>
           <Typography variant="h6" component="h3" className={styles.span1}>
             {data.title}
           </Typography>
           <Typography variant="body1" className={styles.span2}>
-           {data.description}
+            {data.description}
           </Typography>
-            </Box>
-          </Box>
-          
         </Box>
-        ))}
       </Box>
-</Box>
+    </Grid>
+  ))}
+</Grid>
+
+</section>
 
 <section style={{ width: "100%", backgroundColor: "#f5f5f5" }}>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

@@ -4,6 +4,7 @@ import styles from "./cloud.module.css";
 import Image from "next/image";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
+import { Box, Grid, Paper, Typography } from "@mui/material";
 
 export default function CloundServices(){
   const customBuild=[
@@ -108,20 +109,20 @@ export default function CloundServices(){
         setActiveCardId((prevActiveId) => (prevActiveId === id ? "null" : id));
       };
 
-  const [counters, setCounters] = useState([0, 0, 0]); // State for the counters
-  const sectionRef = useRef(null); // Ref for the section
-  const hasAnimated = useRef(false); // To ensure animation runs only once per page load
+  const [counters, setCounters] = useState([10, 100, 70]); 
+  const sectionRef = useRef(null); 
+  const hasAnimated = useRef(false);
 
-  const targetValues = [10, 100, 70]; // Target values for the counters
+  const targetValues = [10, 100, 70]; 
 
   // Function to handle the counting animation
   const animateCounters = () => {
-    const duration = 2000; // Animation duration in milliseconds
+    const duration = 2000; 
     const startTime = performance.now();
 
     const update = (currentTime:number) => {
       const elapsedTime = currentTime - startTime;
-      const progress = Math.min(elapsedTime / duration, 1); // Cap progress at 1
+      const progress = Math.min(elapsedTime / duration, 1); 
 
       setCounters(targetValues.map((target) => Math.floor(target * progress)));
 
@@ -133,16 +134,15 @@ export default function CloundServices(){
     requestAnimationFrame(update);
   };
 
-  // Set up Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true; // Ensure it runs only once
+          hasAnimated.current = true; 
           animateCounters();
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.5 } 
     );
 
     if (sectionRef.current) {
@@ -190,42 +190,47 @@ export default function CloundServices(){
  </section>
 
     <section className={styles.section1}>
-      <div className="container largeContainer">
-        <div className={styles.s1row} style={{
+      <Grid className="container largeContainer">
+        <Grid container rowSpacing={1} className={styles.s1row} style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
           }}>
           {/* Left Content Section */}
-          <div className={styles.s1left} style={{ flex: "1 1 50%" }}>
+          <Grid xs={12} sm={12} md={6}>
+          <Box component="div" className={styles.s1left} style={{ flex: "1 1 50%" }}>
             <h1 className={styles.s1secTitle}>Custom-Built Applications</h1>
             <p className={styles.secDesc}>
-              In today’s fast-paced digital world, applications are the backbone of modern business operations. Whether you&apos;re looking to enhance customer experiences, streamline operations, or gain a competitive edge, having the right applications in place is essential. At Solverines, we offer a comprehensive range of application services designed to meet the unique demands of your business and industry.
+              In today’s fast-paced digital world, applications are the backbone of modern business operations. Whether you&apos;re looking
+               to enhance customer experiences, streamline operations, or gain a competitive edge, having the right applications in place is essential. At Solverines,
+               we offer a comprehensive range of application services designed to meet the unique demands of your business and industry.
             </p>
-            <div >
-              {customBuild.map((item, index) => (
-      <div className={styles.s2box} key={index}
-        onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(null)}>
-        <div className={styles.s2img}>
-          <Image 
-          //src={item.imgSrc} 
-          src={hoveredIndex === index ? item.hover : item.imgSrc}
-          alt="Service Icon"
-           width={50} height={50} />
-        </div>
-        <div>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </div>
-      </div>
-    ))}
-
-    </div>
-    </div>
+            <Box component="div">
+            {customBuild.map((item, index) => (
+             <Box component="div" className={styles.s2box} key={index}
+               onMouseEnter={() => setHoveredIndex(index)}
+               onMouseLeave={() => setHoveredIndex(null)}>
+               <Box component="div" className={styles.s2img}>
+                 <Image 
+                 //src={item.imgSrc} 
+                 src={hoveredIndex === index ? item.hover : item.imgSrc}
+                 alt="Service Icon"
+                  width={50} height={50} />
+               </Box>
+               <Box component="div">
+                 <h3>{item.title}</h3>
+                 <p>{item.description}</p>
+               </Box>
+             </Box>
+           ))}
+       
+          </Box>
+          </Box>
+          </Grid>
 
           {/* Right Image Section */}
-          <div
+          <Grid xs={12} sm={12} md={6}>
+          <Box component="div"
             className={styles.s1right} 
             style={{
               flex: "0 0 50%",
@@ -241,37 +246,74 @@ export default function CloundServices(){
               height={500}
               style={{ maxWidth: "100%", height: "auto" }}
             />
-          </div>
-        </div>
-      </div>
+          </Box>
+          </Grid>
+        </Grid>
+      </Grid>
     </section>
 
     <section className={styles.section2}>
-    <div className={styles.container}>
-        <div className={styles.title}>
-          <div className={styles.subTitle}>
-            <span className={styles.bleft}></span>Our Application Services Offerings
-            <span className={styles.bleft}></span>
-          </div>
-        </div>
+    <Box component="div" sx={{ py: 5, backgroundColor: '#eeedf0' }}>
+      <Box component="div" sx={{ textAlign: 'center', mb: 4 }}>
+        <Typography variant="h5" sx={{ color: 'rgb(116,40,148)', fontWeight: 'bold' }}>
+          Our Application Services Offerings
+        </Typography>
+      </Box>
 
-        <div className={styles.grid}>
-          {services.map((service, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.icon}>
-              <Image
-               src="/images/bg/newboard.png"
-               alt="Service Icon"
-               width={40}
-               height={40}
-             />
-              </div>
-              <h3><a href="">{service.title} </a></h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Grid container spacing={2} gap="20px" className={styles.s2row}>
+        {services.map((service, index) => (
+          <Grid item key={index} xs={12} sm={6} md={3.5}  className={styles.card} 
+          sx={{
+            p: 3,
+            textAlign: 'center',
+            borderRadius: 2,
+            transition: 'transform 0.3s',
+            // border:'1px solid black',
+            '&:hover': {
+              transform: 'scale(1.02)',
+              backgroundColor: 'rgb(116,40,148)',
+              color: 'white',
+              boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.3)',
+            },
+          }}
+          >
+              <Box component="div"
+                sx={{
+                  width: 90,
+                  height: 90,
+                  mx: 'auto',
+                  mb: 2,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '50%',
+                  border: '1px solid rgb(240, 166, 166)',
+                  backgroundColor: 'white',
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    border: 'none',
+                  },
+                }}
+              >
+                <Image
+                  src="/images/bg/newboard.png"
+                  alt="Service Icon"
+                  width={40}
+                  height={40}
+                />
+              </Box>
+              <Typography variant="h5" sx={{ fontWeight: 'bold', m: 4 ,my:1 }}>
+                <a href="#" style={{ textDecoration: 'none'}} className={styles.s2title}>
+                  {service.title}
+                </a>
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'rgb(82, 84, 82)', m: 4 ,my:1,lineHeight:"1.8"}}>
+                {service.description}
+              </Typography>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
     </section>
 
     <section  className={`${styles.section3} ${styles.abcs01}`} ref={sectionRef}>
@@ -316,8 +358,8 @@ export default function CloundServices(){
           </div>
 
   {/* Right Column: 30% */}
-  <div style={{ flex: '30%', position: 'relative', paddingLeft: '15px' }}>
-    <div className={styles.expCounter}
+  <Grid  style={{ flex: '30%', position: 'relative', paddingLeft: '15px' }} className={styles.s3expCounter}>
+    <Box component="div" className={styles.expCounter}
       style={{
         backgroundImage: "url('/images/bg/4.png')",
         backgroundPosition: "top right",
@@ -330,8 +372,8 @@ export default function CloundServices(){
         {counters[0]}+
         </span></h2>
       <p>Years Of Experience</p>
-    </div>
-    <div
+    </Box>
+    <Box component="div" 
       className={styles.expCounter}
       style={{
         position: 'relative',
@@ -349,8 +391,8 @@ export default function CloundServices(){
         </span>
       </h2>
       <p>Experts</p>
-    </div>
-    <div
+    </Box>
+    <Box component="div"
       className={styles.expCounter}
       style={{
         position: 'relative',
@@ -368,9 +410,9 @@ export default function CloundServices(){
         </span>
       </h2>
       <p>Certification</p>
-    </div>
-  </div>
-</div>
+    </Box>
+  </Grid >
+ </div>
 
       </div>
     </section>

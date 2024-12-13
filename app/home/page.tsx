@@ -1,5 +1,4 @@
 "use client";
-
 import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./home.module.css";
@@ -29,27 +28,27 @@ export default function Homes() {
     let interval: NodeJS.Timeout;
 
     const startSequence = () => {
-      setCaptionVisible(true); // Initially hide captions
-      setTriVisible(true); // Initially hide triangles
-      setAnimateTriangles(true); // Initially disable triangle animations
+      setCaptionVisible(true); 
+      setTriVisible(true);
+      setAnimateTriangles(true); 
 
       interval = setInterval(() => {
-        setShowFirstImage((prev) => !prev); // Toggle images
+        setShowFirstImage((prev) => !prev); 
         setTimeout(() => {
-          setCaptionVisible(true); // Show captions after 1.5s
-          // setTriVisible(true); // Show triangles after 1.5s
-          setAnimateTriangles(false); // Reset triangle animations
+          setCaptionVisible(true); 
+          // setTriVisible(true); 
+          setAnimateTriangles(false); 
         }, 100);
 
         setTimeout(() => {
-          setAnimateTriangles(true); // Trigger triangle animations
-        }, 1000); // Slight delay for triangle animations to sync
-      }, 5000); // Switch images every 6 seconds
+          setAnimateTriangles(true); 
+        }, 1000); 
+      }, 5000); 
     };
 
     startSequence();
 
-    return () => clearInterval(interval); // Cleanup on component unmount
+    return () => clearInterval(interval);
   }, []);
 
 
@@ -165,7 +164,7 @@ export default function Homes() {
         if (entry.isIntersecting && !hasAnimated) {
           counters.forEach((counter, index) => {
             let start = 0;
-            const step = Math.ceil(counter.target / 50); // Increment step (adjust for smoother animation)
+            const step = Math.ceil(counter.target / 50); 
             const interval = setInterval(() => {
               start += step;
               if (start >= counter.target) {
@@ -177,12 +176,12 @@ export default function Homes() {
                 newCounts[index] = start;
                 return newCounts;
               });
-            }, 50); // Animation speed
+            }, 50); 
           });
           setHasAnimated(true);
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.5 } 
     );
 
     if (sectionRef.current) {
@@ -301,32 +300,31 @@ export default function Homes() {
       </section>
 
       <section className={styles.section2}>
-        <div className={styles.row}>
-          <div className={styles.leftside}>
-           <div className={styles.left}>
-           <div className={styles.subTitle}>
-              <span className={styles.bleft}></span>Global Experience
-            </div>
-            <h2 className={styles.secTitle}>
-              Transforming Businesses with Low Code Solutions using <span style={{ color: "rgb(116,40,148)" }}>OutSystems</span>
-            </h2>
-            <p className={styles.secDesc}>
-              We have successfully delivered customized low-code solutions to clients across diverse industries worldwide, driving impactful digital transformations. Our expertise ensures
-              each solution is tailored to meet specific business needs, resulting in enhanced efficiency, productivity, and innovation in today&apos;s fast-paced digital landscape.
-            </p>
-            <p style={{ marginTop: "5%" }} className={styles.secDesc}>
-              From consulting to implementation and support, our comprehensive suite of
-              services ensures a seamless journey from concept to deployment and beyond.
-              Leverage our extensive knowledge and experience in low code platforms to
-              accelerate your digital transformation.
-            </p>
-           </div>
-          </div>
-          <div className={styles.globe} >
-              <Globe />
-          </div>
-        </div>
-      </section>
+      <Grid container rowSpacing={1} >
+       <Grid item xs={12} sm={12} md={6}>
+         <Box component="div">
+         <Box  component="div" className={styles.left}>
+              <Typography variant="subtitle1" className={styles.s2subTitle}>
+                <Box component="span" className={styles.bleft}></Box>Global Experdescience
+              </Typography>
+              <Typography variant="h5" className={styles.secTitle} gutterBottom>
+                Transforming Businesses with Low Code Solutions using 
+                <Box component="span" color="rgb(116,40,148)">OutSystems</Box>
+              </Typography>
+              <Typography variant="body1" className={styles.secDesc} paragraph sx={{ mt: 3}}>
+                We have successfully delivered customized low-code solutions to clients across diverse industries worldwide, driving impactful digital transformations. Our expertise ensures each solution is tailored to meet specific business needs, resulting in enhanced efficiency, productivity, and innovation in today&apos;s fast-paced digital landscape.
+              </Typography>
+              <Typography variant="body1" className={styles.secDesc} paragraph sx={{ mt: 5 }}>
+                From consulting to implementation and support, our comprehensive suite of services ensures a seamless journey from concept to deployment and beyond. Leverage our extensive knowledge and experience in low code platforms to accelerate your digital transformation.
+              </Typography>
+            </Box>
+         </Box>
+       </Grid>
+       <Grid item xs={12} sm={12} md={6}>
+         <Box component="div" className={styles.globe }><Globe/></Box>
+       </Grid>
+      </Grid>
+    </section>
 
       <section className={styles.section3}>
         <Container maxWidth="lg" sx={{ py: 5 }}>
@@ -334,7 +332,8 @@ export default function Homes() {
             {/* Section Title */}
             <Grid item xs={12} md={6}>
               <Box component="div" className={styles.s3img} >
-                <Typography variant="h6" color="rgb(116,40,148) ">
+              <Box component="div" className={styles.s3left}>
+              <Typography variant="h6" color="rgb(116,40,148) ">
                   <Box component="span"  ><span className={styles.bleft}></span>
                     What we do
                   </Box>
@@ -346,6 +345,7 @@ export default function Homes() {
                   </Box>
                 </Typography>
               </Box>
+              </Box>
             </Grid>
 
             {/* Grid items: 6 items in the same size */}
@@ -354,23 +354,19 @@ export default function Homes() {
                 <Box key={service.id || index}
                   component="div" className={styles.gridItem}
                   sx={{
-                    p: 5,
-                    mx: 3,
-                    border: "1px solid #ddd",
-                    borderRadius: 2,
-                    boxShadow: 1,
-                    width: "90%",
-                    height: "310px",
-                    // transition: "transform 0.3s",
-                    // "&:hover": { transform: "scale(1.05)" }, 
+                    width: "80%",
+                    height: "380px",
                   }}
                 >
                   {/* Image and Title */}
-                  <Box component="div" sx={{ mb: 2, textAlign: "center" }}>
-                    <img
+                  <Box component="div" sx={{ mt: 1.5,p:2, textAlign: "center" }}className={styles.s3Img}>
+                    <Image
                       src={service.imgSrc}
                       alt={service.title}
-                      style={{ width: "80px", borderRadius: "5px" }}
+                      height={120}
+                      width={120}
+                      objectFit="cover"
+                      style={{  borderRadius: "5px" }}
                     />
                   </Box>
 
@@ -384,13 +380,11 @@ export default function Homes() {
                   </Typography>
 
                   {/* Read More Button */}
-                  <Button className={styles.button}
-                    href={service.link}
-                    variant="contained"
-                    size="small"  >
+                  <Link className={styles.button}
+                    href={service.link} >
                     Read More
                     <span className={styles.s3bicon}><EastOutlinedIcon /></span>
-                  </Button>
+                  </Link>
                 </Box>
               </Grid>
             ))}
@@ -400,61 +394,63 @@ export default function Homes() {
       </section>
 
       <section className={styles.section4}>
-        <div className="row">
-          <div className="col-lg-12 text-center">
-            <div className={styles.s4Title}>
+        <Grid className="row">
+          <Box component="div"  className="col-lg-12 text-center">
+            <Box component="div"  className={styles.s4Title}>
               <span className={styles.bleft}></span>What we do
               <span className={styles.bleft}></span>
-            </div>
+            </Box>
             <h2 className={styles.sec4Title}>
               Industries <span style={{ color: "rgb(116,40,148)" }}>We Serve</span>
             </h2>
-          </div>
-        </div>
+          </Box>
+        </Grid>
 
-        <div
-          className={styles.folioSlider}
+        <Grid container spacing={3} className={styles.folioSlider}>
+    {industries.map((industry, index) => (
+      <Grid
+        key={index}
+        item
+        xs={12} 
+        sm={6} 
+        md={4} 
+        lg={4} 
+        className={styles.folioItem}
+      >
+        <Image
+          src={industry.src}
+          alt={industry.title}
+          layout="fill"
+          objectFit="cover"
+          priority
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            zIndex: 1,
           }}
-        >
-          {industries.map((industry, index) => (
-            <div key={index} className={styles.folioItem} >
+        />
+        <Box component="div" className={styles.folioContent}>
+          <Box component="div" className={styles.cat}>
+            <span className={styles.bleft} style={{ backgroundColor: "white" }}></span>
+            Industries
+          </Box>
+          <h1 className={styles.cat}>{industry.title}</h1>
+        </Box>
+        <Box component="div" className={styles.folioContentv}>
+          <Link href={industry.link} className={styles.fm} style={{ textDecoration: "none" }}>
+            <Button className={styles.foliobutton}>
               <Image
-                src={industry.src}
+                src="/images/bg/eye.png"
                 alt={industry.title}
-                layout="fill"
+                height={40}
+                width={40}
                 objectFit="cover"
-                priority
-                style={{
-                  zIndex: 1,
-                }}
               />
-              <div className={styles.folioContent}>
-                <div className={styles.cat}><span className={styles.bleft} style={{ backgroundColor: "white" }}></span>
-                  Industries
-                </div>
-                <h1 className={styles.cat} >
-                  {industry.title}
-                </h1>
-              </div>
-              <div className={styles.folioContentv}>
-                <Link href={industry.link} className={styles.fm} style={{ textDecoration: "none" }}>
-                  <Button className={styles.foliobutton}>
-                    <Image
-                      src="/images/bg/eye.png"
-                      alt={industry.title}
-                      height={40}
-                      width={40}
-                      objectFit="cover" />
-                    <span style={{ marginLeft: "10px", color: "white" }}>View Details</span>
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+              <span style={{ marginLeft: "10px", color: "white" }}>View Details</span>
+            </Button>
+          </Link>
+        </Box>
+      </Grid>
+    ))}
+  </Grid>
       </section>
 
 
@@ -509,7 +505,7 @@ export default function Homes() {
                 >
                   Enhance Your Low-Code Innovation with OutSystems
                 </Typography>
-                <Typography variant="body1" sx={{ mb: 4, color: "#9ca3a5" }}>
+                <Typography variant="body1" sx={{ mb: 4, color: "  #7e8485" }}>
                   In the fast-paced world of digital transformation, businesses need
                   to innovate quickly and efficiently to stay competitive. OutSystems
                   provides a powerful low-code platform that enables organizations to
@@ -586,7 +582,7 @@ export default function Homes() {
                       <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                         {item.title}
                       </Typography>
-                      <Typography variant="body2" sx={{ lineHeight: 1.8, color: "#9ca3a5" }}>{item.description}</Typography>
+                      <Typography variant="body2" sx={{ lineHeight: 1.8, color: "#7e8485" }}>{item.description}</Typography>
                     </Box>
                   </Box>
                 ))}
@@ -623,24 +619,24 @@ export default function Homes() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}>
-        <div className="container largeContainer">
-          <div className={styles.s7row}>
+        <Grid className={styles.s7row} container rowSpacing={1} >
+          <Grid xs={12} sm={6} md={3} >
             {/* Left Image Column */}
-            <div className={styles.s7left}>
+            <Box component="div" className={styles.s7left}>
               <Image
                 src="/images/bg/outsystems-sales-delivery.png"
                 alt="Outsystems Sales Delivery"
-                width={350}
+                width={200}
                 height={100}
               />
-            </div>
-            <div className={styles.s7right}>
-              <div className={styles.imageSlider}>
+            </Box>
+          </Grid>
+            <Grid className={styles.s7right} xs={12} sm={12} md={9}>
+              <Box component="div" className={styles.imageSlider}>
                 <SwiperComponent InputData={CertimageData} />
-              </div>
-            </div>
-          </div>
-        </div>
+              </Box>
+            </Grid>
+        </Grid>
 
       </section>
 

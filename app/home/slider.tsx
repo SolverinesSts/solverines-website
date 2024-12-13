@@ -47,8 +47,8 @@ export default function App({InputData}:any) {
           <Image
           src={image?.imageUrl}
           alt={image?.imageAlt}
-          height={100}
-          width={100}
+          height={140}
+          width={120}
           />
        </SwiperSlide>
      ))}
