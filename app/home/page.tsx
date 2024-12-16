@@ -354,7 +354,7 @@ export default function Homes() {
                 <Box key={service.id || index}
                   component="div" className={styles.gridItem}
                   sx={{
-                    width: "80%",
+                    // width: "80%",
                     height: "380px",
                   }}
                 >

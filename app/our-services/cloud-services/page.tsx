@@ -435,7 +435,7 @@ export default function CloundServices(){
             <div className={styles.techStackItem}>
               <div className={styles.techName}>Web Development</div>
               <div className={styles.techList}>
-                <span>React</span> <span>Angular</span> <span>HTML</span>
+              <span>Next.js</span><span>React</span> <span>Angular</span> <span>HTML</span>
               </div>
             </div>
             <div className={styles.techStackItem}>
