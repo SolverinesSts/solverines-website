@@ -90,7 +90,7 @@ export default function Homes() {
       title: "Data Analytics & AI",
       imgSrc: "/images/bg/data analytics & ai.png",
       description:
-        "Harness the power of data and automation to drive smarter decision-making and operational efficiency...",
+        "Harness the power of data and automation to drive smarter decision-making and operational efficiency. Our Data & Automation services...",
       link: "/our-services/cloud-services",
     },
     {
@@ -301,9 +301,9 @@ export default function Homes() {
 
       <section className={styles.section2}>
       <Grid container rowSpacing={1} >
-       <Grid item xs={12} sm={12} md={6}>
+       <Grid item xs={12} sm={12} md={12} lg={6}>
          <Box component="div">
-         <Box  component="div" className={styles.left}>
+         <Box  component="div" className={styles.s3left}>
               <Typography variant="subtitle1" className={styles.s2subTitle}>
                 <Box component="span" className={styles.bleft}></Box>Global Experdescience
               </Typography>
@@ -320,21 +320,23 @@ export default function Homes() {
             </Box>
          </Box>
        </Grid>
-       <Grid item xs={12} sm={12} md={6}>
-         <Box component="div" className={styles.globe }><Globe/></Box>
+       <Grid item xs={12} sm={12} md={12} lg={6}>
+        <Box component="div"  className={styles.s3right}>
+        <Box component="div" className={styles.globe }><Globe/></Box>
+        </Box>
        </Grid>
       </Grid>
     </section>
 
       <section className={styles.section3}>
-        <Container maxWidth="lg" sx={{ py: 5 }}>
+        <Grid sx={{ py: 5 }} className={styles.s3container}>
           <Grid container spacing={4}>
             {/* Section Title */}
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}sm={12} md={12} lg={6}>
               <Box component="div" className={styles.s3img} >
               <Box component="div" className={styles.s3left}>
               <Typography variant="h6" color="rgb(116,40,148) ">
-                  <Box component="span"  ><span className={styles.bleft}></span>
+                  <Box component="span" color="rgb(116,40,148) " ><span className={styles.bleft}></span>
                     What we do
                   </Box>
                 </Typography>
@@ -350,16 +352,16 @@ export default function Homes() {
 
             {/* Grid items: 6 items in the same size */}
             {services.map((service, index) => (
-              <Grid item xs={12} sm={6} md={3} key={service.id} >
+              <Grid item xs={12} sm={6} md={4} lg={3}  key={service.id} >
                 <Box key={service.id || index}
                   component="div" className={styles.gridItem}
                   sx={{
                     // width: "80%",
-                    height: "380px",
+                    minHeight: "400px",
                   }}
                 >
                   {/* Image and Title */}
-                  <Box component="div" sx={{ mt: 1.5,p:2, textAlign: "center" }}className={styles.s3Img}>
+                  <Box component="div" sx={{ mt: 1.5,p:3, textAlign: "center" }}className={styles.s3Img}>
                     <Image
                       src={service.imgSrc}
                       alt={service.title}
@@ -390,7 +392,7 @@ export default function Homes() {
             ))}
 
           </Grid>
-        </Container>
+        </Grid>
       </section>
 
       <section className={styles.section4}>
@@ -602,9 +604,9 @@ export default function Homes() {
             {counters.map((counter, index) => (
               <Grid item xs={12} sm={6} md={3} key={counter.id}>
                 <Box component="div" className={styles.s6box} >
-                  <Typography variant="h6" fontWeight="bolder">{counter.title}</Typography>
+                  <Typography variant="h6" fontWeight="bolder" sx={{paddingBottom:"3%"}}>{counter.title}</Typography>
                   <Typography variant="h3" fontWeight="bolder" color="rgb(116,40,148)">
-                    {counts[index]} <span><AddIcon /></span> </Typography>
+                    {counts[index]} <span><AddIcon fontSize="large" fontWeight="bolder" /></span> </Typography>
                 </Box>
               </Grid>
             ))}
