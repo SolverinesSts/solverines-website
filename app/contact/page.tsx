@@ -35,66 +35,60 @@ export default function Contact(){
 
     return(
         <Fragment>
-        <section className={styles.section}
-        style={{ backgroundImage: "url(/images/bg/contact_us.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-         }}>
-      <div className="container largeContainer">
-        <div className="row">
-          <div className="col-md-8">
-          <div className={styles.row} style={{ display: "flex", alignItems: "center"}}>
-  {/* Left Image Column */}
-  <div className="col-md-2" style={{ textAlign: "center" }}>
-    <Image
-      src="/images/Service/icon_4.png"
-      alt="Service Icon"
-      width={80}
-      height={80}
-    />
-  </div>
-
-  {/* Right Text Column */}
-  <div className={styles.colmd10}>
-    <h1 style={{ color: "white", marginBottom: "0px",fontSize:"30px"}}>
-    Let&apos;s Connect
-    </h1>
-    <h2 style={{ color: "white",marginTop:"0px"}}>
-    Reach out for any inquiries, support, or collaboration opportunities.
-    </h2>
-  </div>
- </div>
-</div>
-</div>
-</div>
-</section>
+         <section className={styles.section}
+                 style={{ backgroundImage: "url(/images/bg/contact_us.png)",
+                     backgroundRepeat: "no-repeat",
+                     backgroundSize: "cover",
+                  }}>
+               <div className="container largeContainer">
+                 <div className="row">
+                   <div className="col-md-8">
+                   <div className={styles.row} style={{ display: "flex", alignItems: "center"}}>
+           {/* Left Image Column */}
+           <div className="col-md-2" style={{ textAlign: "center" }}>
+             <Image
+               src="/images/Service/icon_4.png"
+               alt="Service Icon"
+               width={80}
+               height={80}
+             />
+           </div>
+         
+           {/* Right Text Column */}
+           <div className={styles.colmd10}>
+             <h1 style={{ color: "white", marginBottom: "0px",fontSize:"30px"}}>
+             Let&apos;s Connect
+             </h1>
+             <h2 style={{ color: "white",marginTop:"0px"}}>
+             Reach out for any inquiries, support, or collaboration opportunities.
+             </h2>
+           </div>
+          </div>
+         </div>
+         </div>
+         </div>
+         </section>
 
 <section  className={styles.section1}>
 <Grid
   container
-  spacing={2} // Adds spacing between items
+  spacing={2} 
 >
   {datas.map((data, index) => (
     <Grid
       item
       key={data.id || index}
-      xs={12} // 1 item per row for extra-small screens
-      sm={6}  // 2 items per row for small screens
-      md={6}  // 2 items per row for medium screens
-      lg={4}  // 3 items per row for large screens
+      xs={12} 
+      sm={6} 
+      md={6}  
+      lg={4} 
       sx={{
         borderRadius: "8px",
         textAlign: "center",
       }}
     >
-      <Box
-        component="div"
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
+      <Box component="div"  className={styles.iBox}
+        sx={{}}  >
         <Box component="div" className={styles.iconbox}>
           <Box component="div" className={styles.icon}>
             {data.icon}

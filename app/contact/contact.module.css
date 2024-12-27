@@ -12,6 +12,13 @@
   background-color: rgb(250,237,255);
   line-height: 1.8;
 }
+.iBox{
+  
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  /* border: 1px solid black; */
+}
 .iconbox{
   flex: 1 1 50%;
     display: flex;
@@ -20,7 +27,7 @@
     max-width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 1px solid rgb(240, 166, 166);
+    border: 1.5px solid rgb(240, 166, 166);
     margin-right:5px ;
 }
 .icon{
@@ -35,14 +42,14 @@
    
     /* border: 2px solid black; */
 }
-.iconbox:hover{
-    border: 1px solid rgb(125, 51, 156);
+.iBox:hover .iconbox{
+    border: 1.5px solid rgb(125, 51, 156);
 }
 
-.iconbox:hover .icon{
+.iBox:hover .icon{
     background-color: rgb(125, 51, 156);
     color: white;
-    border: 1px solid rgb(125, 51, 156);
+    border: 1.5px solid rgb(125, 51, 156);
     transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out; 
 }
 .iconbox {

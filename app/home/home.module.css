@@ -333,12 +333,14 @@ padding-bottom: 2%;
   align-items: center;
   display: flex;
   width: 140px;
-  height: 45px;
+  /* height: 45px; */
   text-decoration: none;
   font-size:large;
   font-weight: bolder;
-  bottom: 10px;
+  /* bottom: 10px; */
   /* border: 1px solid black; */
+  padding-bottom: 0px;
+  margin-top: 2%;
 }
 .gridItem:hover .s3desc{
 color: white;
@@ -388,6 +390,7 @@ color: white;
   margin-left: 8px; 
   transition: opacity 0.3s ease; 
   padding-top: 5%;
+  padding-bottom: 0%;
   /* display: none; */
 }
 

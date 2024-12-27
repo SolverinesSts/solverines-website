@@ -417,7 +417,7 @@ export default function CloundServices(){
       </div>
     </section>
 
-    <section className={styles.techStack} style={{ padding: "50px", backgroundColor: "#f6f6f6" }}>
+    <section className={styles.techStack} >
       <div className={`${styles.container} largeContainer`}>
         <div className={styles.s4row}>
           <div>
@@ -430,7 +430,7 @@ export default function CloundServices(){
           </div>
         </div>
 
-        <div className={styles.sectionBody} style={{ padding: "50px" }}>
+        <div className={styles.sectionBody} >
           <div className="col-sm-12">
             <div className={styles.techStackItem}>
               <div className={styles.techName}>Web Development</div>

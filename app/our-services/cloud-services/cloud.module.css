@@ -228,11 +228,11 @@
     background-color: #f6f6f6;
 }
   
-  .container {
+  /* .container {
     max-width: 1200px;
     margin: auto;
   }
-  
+   */
   .subTitle {
     font-size: 24px;
     font-weight: bold;
@@ -240,6 +240,7 @@
 .sectionBody {
     margin-top: 60px;
     /* border: 1px solid black; */
+    padding: 50px;
   }
   
   .techStackItem {
@@ -270,7 +271,15 @@
     border-radius: 5px;
     color:rgb(125, 51, 156)  ;
   }
-
+  @media screen and (max-width: 500px) {
+    .sectionBody  {
+     padding: 0px;
+      
+    }
+    .techStack{
+      padding: 5px;
+    }
+  }
  
   /* ------------------------- */
 
