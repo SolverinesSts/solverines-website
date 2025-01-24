@@ -196,6 +196,10 @@ export default function Homes() {
 
   return (
     <Fragment>
+
+      <title>Home</title>
+      <meta name="description" content='Initial description'/>
+
       <div className={styles.div}>
         <div className={styles.slideshowHeader}>
           <div className={styles.imageContainer}>

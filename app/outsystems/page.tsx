@@ -149,6 +149,9 @@ useEffect(() => {
 
   return(
     <Fragment>
+     <title>OutSystems</title>
+     <meta name="description" content='Outsystem page description'/>
+     
     <section className={styles.section}style={{ backgroundColor:"black" }}>
     <div className={styles.srow}>
      <h2 style={{ color: "white"}}> Low-code, high-performance.</h2>

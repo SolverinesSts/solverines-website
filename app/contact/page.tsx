@@ -35,6 +35,9 @@ export default function Contact(){
 
     return(
         <Fragment>
+         <title>Contact </title>
+         <meta name="description" content='Contact description'/>
+
          <section className={styles.section}
                  style={{ backgroundImage: "url(/images/bg/contact_us.png)",
                      backgroundRepeat: "no-repeat",

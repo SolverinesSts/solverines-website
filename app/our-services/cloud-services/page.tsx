@@ -154,6 +154,8 @@ export default function CloundServices(){
 
     return(
      <Fragment>
+       <title>Our-services</title>
+       <meta name="description" content='Our-services page description'/>
         <section className={styles.section}
         style={{ backgroundImage: "url(/images/bg/application_services.png)",
           backgroundRepeat: "no-repeat",
