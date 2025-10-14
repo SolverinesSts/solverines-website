@@ -139,7 +139,7 @@ export default function Homes() {
   ];
 
   const industries = [
-    { src: '/images/folio/Automotive.png', title: 'Automotive', link: '#' },
+    { src: '/images/folio/Automotive.png', title: 'Automotive', link: '/industries/automotive' },
     { src: '/images/folio/ConsumerGoods.png', title: 'Consumer Goods', link: '#' },
     { src: '/images/folio/FinancialService.png', title: 'Financial Service', link: '#' },
     { src: '/images/folio/Logistics.png', title: 'Logistics', link: '#' },
