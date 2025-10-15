@@ -1,0 +1,38 @@
+.footer {
+    background-color: #292121; /* Example background color */
+    padding: 30px ;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .copyMenu ul {
+    list-style: none;
+    padding-bottom: 3%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .copyMenu li {
+    margin-left: 20px;
+  }
+  
+  .copyMenu a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .copyMenu a:hover {
+    color:rgb(125, 51, 156);
+  }
+  
+  .copyright {
+    background-color: #100f0f;
+    padding: 15px 0;
+    color: white;
+  }
