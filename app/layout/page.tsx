@@ -152,7 +152,7 @@ export default function Layout() {
                 <MenuItem component={Link} href="/our-services/cloud-services" onClick={closeServicesMenu} className={styles.li}>
                   Cloud Services
                 </MenuItem>
-                <MenuItem component={Link} href="/outsystems" onClick={closeServicesMenu} className={styles.li}>
+                <MenuItem component={Link} href="/our-services/application-services" onClick={closeServicesMenu} className={styles.li}>
                   Application Services
                 </MenuItem>
                 <MenuItem component={Link} href="/outsystems" onClick={closeServicesMenu} className={styles.li}>
