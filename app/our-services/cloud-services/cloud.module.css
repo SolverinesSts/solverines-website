@@ -1,327 +1,255 @@
-.bleft {
-    display: inline-block; /* Ensures it behaves like a block to allow styling */
-    width: 50px; /* Adjust the length of the line */
-    height: 2px; /* Set the thickness of the line */
-    background-color:rgb(116,40,148); /* Adjust the color as needed */
-    vertical-align: middle; /* Aligns vertically within inline content */
-    margin: 0 auto; /* Center the line horizontally */
-    position: relative; /* Ensures precise positioning if needed */
-    margin-right: 2%;
-    margin-left: 2%;
-    color: rgb(116,40,148);
+.servicecard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(116,40,148,0.2);
+}
+/* .trust-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(116,40,148,0.15);
+} */
+.iconcircle:hover {
+  transform: rotate(360deg);
+  background-color: rgba(255,255,255,0.2);
+}
+.btnsecondary:hover {
+  transform: scale(1.05);
+  background-color: rgba(116,40,148,0.05);
+}
+/* @media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem !important;
   }
-  .srow{
-    padding-left: 3%;
-    padding-top: 7%;
+  .sub-title-1 {
+    font-size: 1.5rem !important;
   }
-  .colmd10{
-    width: 45%;
-    margin-left:2%;
-    /* border: 1px solid black; */
+  .sub-title-2 {
+    font-size: 1.25rem !important;
   }
- 
-.section1{
-    padding-bottom: 3%;
-}  
+} */
 
-.s1secTitle{
-  font-weight: bolder;
-  font-size: x-large;
-}
-.s1left{
-  padding-left:4% ;
-    padding-right: 5%;
+
+/* ========== Global Styles ========== */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.s2box p{
-  color: rgb(180, 178, 180);   
-}
-.secDesc{
-    color: rgb(180, 178, 180); 
-}
-.s2box{
-    display: flex;
-    /* border: 1px solid rgb(20, 19, 19); */
-    /* margin: 5%; */
-}
-.s2img{
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  min-width: 90px;
-  min-height: 90px;
-  max-width:90px ;
-  max-height: 90px;
-  border-radius: 50%;
-  flex:1 1 40%;
-   margin: 4%;
-   border: 1px solid rgb(240, 166, 166);
-}
-.s2box:hover .s2img{
+/* ========== Hero Section ========== */
+.heroSection {
+  position: relative;
   background-color: rgb(116,40,148);
-  border: 1px solid white;
-}
-
-/* ---------- */
-.section2 {
-    padding: 50px 20px;
-    background-color: #eeedf0;
-
-  }
-  
-  .s2row{
-    /* border: 1px solid rgb(68, 68, 68); */
-    justify-content: center;
-    justify-items: center;
-    padding: 5%;
-    
-  }
-  .card  a {
-    text-decoration: none;
-  }
-  .card:hover p  {
-    color:white;
-  }
-  .card:hover .s2title {
-    color: white; 
-}
-
-.card .s2title:hover {
-    color: black;
-}
-  .s2title {
-    color: #000;
-  }
-  .card{
-  background-color: white;
-  /* border: 1px solid rgb(82, 84, 82); */
-
-  }
- 
-  /* .icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    width: 90px;
-    height: 90px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-    margin: 0 auto; 
-    border-radius: 50%;
-    border: 1px solid rgb(240, 166, 166);
-  }
-  .card:hover .icon{
-    background-color: white;
-    border:none;
-  }
-  
-  .card  h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    line-height: 1;
-  } */
-  
-  /* .card  p {
-    font-size: 16px;
-    color: #a8a6a6;
-    line-height: 1.8;
-  } */
-  /* ----------- */
-
-  .section3{
-    background-color:white;
-  }
-  .row{
-    max-width: 100%;
-    padding: 5%;
-  }
-.s3card{
-    background-color: white;
-    border: 1px solid rgb(253, 253, 253);
-    margin-top: 5%;
-    border-radius: 35px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-}
-.s3card:hover{
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
-.cardBody{
-    color:#a8a6a6 ;
-    font-size: small;
-    padding: 2%;
-}
-.addbtn{
-    margin: 2%;
-    padding: 1%;
-    align-items: center;
-    text-align: center;
-    padding-top: 2%;
-    border-radius: 50%;
-    background-color:rgb(125, 51, 156)  ;
-    color: white;
-}
-.expCounter{
-  /* border: 1px solid black; */
-  border-radius: 10px;
-  margin: 5%;
-  min-width: 20px;
-  max-width: 200px;
-  min-height: 160px;
   color: white;
-  background-color:rgb(145, 78, 176)  ;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 0 2%;
+  padding: 6% 5% 1%;
+  width: 45%;
+}
+
+/* ========== Animated Elements (Base state) ========== */
+.subTitle1,
+.subTitle2,
+.intro,
+.card,
+.trustCard,
+.conclusionCard {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+/* ========== Show State (When isVisible = true) ========== */
+.show .subTitle1,
+.show .subTitle2,
+.show .intro,
+.show .card,
+.show .trustCard,
+.show .conclusionCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Add delay using nth-child or extra classes ========== */
+.subTitle1 {
+  transition-delay: 0.3s;
+}
+
+.subTitle2 {
+  transition-delay: 0.6s;
+}
+
+.intro {
+  transition-delay: 1.2s;
+}
+
+.conclusionCard {
+  transition-delay: 1.5s;
+}
+
+/* ========== Section ========== */
+.section {
+  margin: 0 auto;
+  padding: 50px 20px 0;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(116,40,148);
+  margin-top: 0;
+}
+
+/* ========== Intro ========== */
+.intro {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========== Grid ========== */
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ========== Card ========== */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-top: 4px solid rgb(116,40,148);
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.show .card {
+  transform: scale(1);
+}
+
+.cardIcon {
+  color: rgb(116,40,148);
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* ========== Why Choose Section ========== */
+.whyChooseSection {
+  background-color: rgba(116,40,148,0.05);
+  padding: 80px 20px;
+}
+
+.trustGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.trustCard {
+  background-color: rgba(116,40,148,0.03);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.show .trustCard {
+  transform: scale(1);
+}
+
+/* ========== What We Do Section ========== */
+.whatWeDoSection {
+  background-color: rgb(116,40,148);
+  color: white;
+  padding: 80px 20px;
+}
+
+.whatWeDoGrid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.iconCircle {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
   align-items: center;
-  padding-left: 20%;
-  /* padding-right: -60px; */
-}
-@media screen and (max-width: 1000px) {
-  .section3 .row {
-    flex-direction: column;
-    
-  }
-
-  .s3left {
-    flex: 100%; 
-    padding-right: 0;
-  }
-
-  .expCounter {
-    flex: 100%; 
-    margin: 20px 0; 
-    right: 0 !important; 
-  }
-}
-.expCounter:hover {
-  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.5s ease;
 }
 
-.counter{
-    /* border: 1px solid black; */
-    font-size: 50px;
-}
-.expCounter p{
-    /* border: 1px solid black; */
-    font-size: larger;
-    margin-top: 0px;
-}
-.expCounter h2{
-   margin-bottom: 0px; 
-   /* border: 1px solid black; */
-   width: 50%;
+/* ========== Conclusion Card ========== */
+.conclusionCard {
+  background: linear-gradient(135deg, rgba(116,40,148,0.1) 0%, rgba(116,40,148,0.05) 100%);
+  border-radius: 16px;
+  padding: 60px 40px;
+  text-align: center;
+  transform: scale(0.95);
 }
 
-
-/* -------------------- */
-
-.s4row{
-    text-align: center;
-    align-items: center;
-     }
-     .s4row p{
-       color: #a8a6a6;
-     }
-
-.techStack {
-    padding: 50px;
-    background-color: #f6f6f6;
+.show .conclusionCard {
+  transform: scale(1);
 }
-  
-  /* .container {
-    max-width: 1200px;
-    margin: auto;
-  }
-   */
-  .subTitle {
-    font-size: 24px;
-    font-weight: bold;
-  }
-.sectionBody {
-    margin-top: 60px;
-    /* border: 1px solid black; */
-    padding: 50px;
-  }
-  
-  .techStackItem {
-    margin-bottom: 30px;
-    display: flex;
-  }
-  
-  .techName {
-    font-weight: bold;
-    padding: 2%;
-    background-color:rgb(125, 51, 156)  ;
-    color: white;
-    min-width: 20%;
-    text-align: center;
-  }
-  .techList{
-    padding: 2%;
-    background-color: white;
-    min-width: 45%;
-    
-  }
-  .techList span {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 16px;
-    background-color: #efe0f4;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color:rgb(125, 51, 156)  ;
-  }
-  @media screen and (max-width: 500px) {
-    .sectionBody  {
-     padding: 0px;
-      
-    }
-    .techStack{
-      padding: 5px;
-    }
-  }
- 
-  /* ------------------------- */
 
-  .footer {
-    background-color: #292121; /* Example background color */
-    padding: 30px ;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .copyMenu ul {
-    list-style: none;
-    padding-bottom: 3%;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .copyMenu li {
-    margin-left: 20px;
-  }
-  
-  .copyMenu a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-  }
-  
-  .copyMenu a:hover {
-    color:rgb(125, 51, 156);
-  }
-  
-  .copyright {
-    background-color: #100f0f;
-    padding: 15px 0;
-    color: white;
-  }
-  
- 
-  
-  
+/* ========== Button ========== */
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.button {
+  padding: 15px 40px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: rgb(116,40,148);
+  border: 2px solid rgb(116,40,148);
+}
